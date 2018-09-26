@@ -1,0 +1,11 @@
+{
+  "name": "PortfolioSite",
+  "version": "1.0.0",
+  "description": "Full stack website for my portfolio",
+  "main": "index.js",
+  "author": "Rohan C.",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

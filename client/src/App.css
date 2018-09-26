@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700');
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: radial-gradient(circle, #2c4366, #263a5a, #20314e, #1a2842, #142037);
+  /* background: radial-gradient(circle, rgba(4, 57, 59, 1) 0%, rgba(3, 36, 37, 0.9556197478991597) 37%, rgba(0, 0, 0, 1) 100%); */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1rem;
+  overflow-x: hidden;
+}
+
+.logo_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  padding-top: 10%;
+  padding-bottom: 20%;
+  overflow: visible;
+  transition-delay: 2s;
+}
+
+@media only screen and (max-width: 1300px){
+  .logo_container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .logo_container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 550px){
+  .logo_container{
+    grid-template-columns: 1fr;
+  }
+}
+
+.logo_container>div {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.descriptor {
+  text-align: center;
+  font-size: 200%;
+}

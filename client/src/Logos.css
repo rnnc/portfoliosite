@@ -1,0 +1,114 @@
+.logos {
+  height: 50%;
+  width: 50%;
+  transition: all 0.5s;
+}
+
+.logoCard {
+  padding: 3%;
+}
+
+.expressLogo {
+  font: 400% helvetica neue, open sans, sans-serif;
+  text-shadow: 2px 2px black;
+  font-weight: 100;
+  line-height: 275%;
+  color: #444;
+}
+
+.mongoLogo {
+  height: 100%;
+  width: 100%;
+  padding-top: 11%;
+}
+
+@media only screen and (min-width: 1300px) {
+  .logos {
+    height: 40%;
+    width: 40%;
+  }
+  .mongoLogo {
+    height: 70%;
+    width: 70%;
+    padding-top: 6%;
+  }
+  .expressLogo {
+    font-size: 400%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .expressLogo {
+    font-size: 300%;
+  }
+}
+
+/* @media only screen and (max-width: 1500px){
+  .expressLogo{
+    font-size: 550%;
+  }
+} */
+
+@media only screen and (max-width: 600px) {
+  .expressLogo {
+    font-size: 200%;
+  }
+}
+
+.reduxLogo_circle {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.reactLogo_circle {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.apolloLogo_circle {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.graphqlLogo_circle {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.apolloLogo_A {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.nodejsLogo_S {
+  opacity: 0;
+}
+
+.reduxLogo_circle_entered {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.reactLogo_circle_entered {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.apolloLogo_circle_entered {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.graphqlLogo_circle_entered {
+  opacity: 1;
+}
+
+.apolloLogo_A_entered {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.nodejsLogo_S_entered {
+  opacity: 1;
+  transition: all 2.5s;
+}
