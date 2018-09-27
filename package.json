@@ -2,10 +2,13 @@
   "name": "PortfolioSite",
   "version": "1.0.0",
   "description": "Full stack website for my portfolio",
-  "main": "index.js",
-  "author": "Rohan C.",
+  "main": "server.js",
+  "author": "Rohan C. <rohan_cy@outlook.com> (https://rohanc.ca)",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "engines": {
+    "node":"10.7.0"
   }
 }
