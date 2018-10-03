@@ -29,30 +29,45 @@ body {
   transition-delay: 2s;
 }
 
-@media only screen and (max-width: 1300px){
-  .logo_container{
+@media only screen and (max-width: 1300px) {
+  .logo_container {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media only screen and (max-width: 800px){
-  .logo_container{
+@media only screen and (max-width: 800px) {
+  .logo_container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media only screen and (max-width: 550px){
-  .logo_container{
+@media only screen and (max-width: 550px) {
+  .logo_container {
     grid-template-columns: 1fr;
   }
-}
-
-.logo_container>div {
-  text-align: center;
-  padding-top: 30px;
 }
 
 .descriptor {
   text-align: center;
   font-size: 200%;
+}
+
+.logoCard {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  transition: all 0.25s;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.selected {
+  margin-bottom: 200px;
+  /* background: #ff0; */
+  box-shadow: 25px 25px 50px 2px rgba(0, 0, 0, 0.2);
+}
+
+.logoCard:hover {
+  box-shadow: 25px 25px 50px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.75s;
 }

@@ -4,10 +4,6 @@
   transition: all 0.5s;
 }
 
-.logoCard {
-  padding: 3%;
-}
-
 .expressLogo {
   font: 400% helvetica neue, open sans, sans-serif;
   text-shadow: 2px 2px black;

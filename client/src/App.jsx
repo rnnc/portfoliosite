@@ -4,9 +4,11 @@ import './App.css';
 import { TweenMax, Power4 } from 'gsap';
 
 import {
-  TopContent,
+  TopContent, BGScreen,
   IntroHeader, IntroPara,
-} from './Components';
+} from './Components/Styled';
+
+import LogoCard from './Components/LogoCard';
 
 import { ReactLogo, ReduxLogo, ApolloLogo } from './FrontEndLogos';
 
@@ -22,10 +24,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      introPlay: true,
-      inView: false,
+      logoDescrip: false
     };
 
+    this.handleClick = this.handleClick.bind(this);
   }
 
   introAnimation() {
@@ -35,7 +37,7 @@ class App extends Component {
     }, {
         ease: Power4.easeInOut,
         opacity: 1,
-        x: 0
+        x: 0,
       }
     );
 
@@ -49,6 +51,14 @@ class App extends Component {
       })
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    const tState = this.state.logoDescrip ? false : true;
+    this.setState({
+      logoDescrip: tState
+    });
+  }
+
   render() {
 
     return (
@@ -56,6 +66,7 @@ class App extends Component {
 
 
         <TopContent>
+          <BGScreen />
           <TrackVisibility partialVisibility>
             {({ isVisible }) => {
               if (isVisible)
@@ -76,17 +87,18 @@ class App extends Component {
 
         <div className="logo_container">
 
-          <div className="logoCard">
+          <LogoCard>
             <ReactLogo />
             <br />
             <label>React</label>
-          </div>
+          </LogoCard>
 
-          <div className="logoCard">
+          <LogoCard>
             <ReduxLogo />
             <br />
             <label>Redux</label>
-          </div>
+            <div className="info"></div>
+          </LogoCard>
 
           <div className="logoCard">
             <ApolloLogo />
