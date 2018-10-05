@@ -18,6 +18,7 @@ import {
 } from './BackEndLogos';
 
 import TrackVisibility from 'react-on-screen';
+import GridCol from './Components/GridCol';
 
 class App extends Component {
 
@@ -26,8 +27,6 @@ class App extends Component {
     this.state = {
       logoDescrip: false
     };
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
   introAnimation() {
@@ -51,31 +50,22 @@ class App extends Component {
       })
   }
 
-  handleClick(e) {
-    e.preventDefault();
-    const tState = this.state.logoDescrip ? false : true;
-    this.setState({
-      logoDescrip: tState
-    });
-  }
-
   render() {
 
     return (
       <React.Fragment>
 
-
         <TopContent>
           <BGScreen />
           <TrackVisibility partialVisibility>
             {({ isVisible }) => {
+
               if (isVisible)
                 this.introAnimation();
-              else {
-                TweenMax.staggerTo(['.header', '.paragraph'], 0.1, {
-                  opacity: 0
-                }, 0.1)
-              }
+              else
+                TweenMax.staggerTo(['.header', '.paragraph'],
+                  0.1, { opacity: 0 }, 0.1);
+
             }}
           </TrackVisibility>
           <IntroHeader className="header">Stuff to fill space</IntroHeader>
@@ -85,77 +75,12 @@ class App extends Component {
 
         <h2 className="descriptor"> Front End Technologies </h2>
 
-        <div className="logo_container">
-
-          <LogoCard>
-            <ReactLogo />
-            <br />
-            <label>React</label>
-          </LogoCard>
-
-          <LogoCard>
-            <ReduxLogo />
-            <br />
-            <label>Redux</label>
-            <div className="info"></div>
-          </LogoCard>
-
-          <div className="logoCard">
-            <ApolloLogo />
-            <br />
-            <label>Apollo</label>
-          </div>
-
-        </div>
-
-        <h2 className="descriptor"> Back End Technologies </h2>
-
-        <div className="logo_container">
-
-          <div className="logoCard">
-            <NodeJSLogo />
-            <br />
-            <label>NodeJS</label>
-          </div>
-
-          <div className="logoCard">
-            <WebpackLogo />
-            <br />
-            <label>Webpack</label>
-          </div>
-
-          <div className="logoCard">
-            <ExpressLogo />
-            {/* <br />
-            <label>ExpressJS</label> */}
-          </div>
-
-          <div className="logoCard">
-            <GraphQlLogo />
-            <br />
-            <label>GraphQL</label>
-          </div>
-
-          <div className="logoCard">
-            <MongoDBLogo />
-          </div>
-
-        </div>
-
-        <h2 className="descriptor">Other</h2>
-
-        <div className="logo_container">
-
-          <div className="logo_container">
-            <label>Stuff</label>
-          </div>
-          <div className="logo_container">
-            <label>Stuff</label>
-          </div>
-          <div className="logo_container">
-            <label>Stuff</label>
-          </div>
-
+        <div className="grid">
+          <GridCol><ReactLogo /></GridCol>
+          <GridCol><ReduxLogo /></GridCol>
+          {/* <div className="col"><ReduxLogo /></div> */}
+          <div className="col"><ApolloLogo /></div>
+          <div className="col"><ExpressLogo /></div>
         </div>
 
       </React.Fragment>
