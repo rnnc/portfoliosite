@@ -89,22 +89,15 @@ class App extends Component {
 
           <LogoCard>
             <ReactLogo />
-            <br />
-            <label>React</label>
           </LogoCard>
 
           <LogoCard>
             <ReduxLogo />
-            <br />
-            <label>Redux</label>
-            <div className="info"></div>
           </LogoCard>
 
-          <div className="logoCard">
+          <LogoCard>
             <ApolloLogo />
-            <br />
-            <label>Apollo</label>
-          </div>
+          </LogoCard>
 
         </div>
 
