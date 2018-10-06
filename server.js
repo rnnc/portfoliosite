@@ -13,10 +13,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-app.get('/', (req, res)=>{
-  res.send(`Invalid Enpoint\n`);
-})
-
 app.listen(PORT, () => {
   console.log('Listening on port ', PORT);
 })

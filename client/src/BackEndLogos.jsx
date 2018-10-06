@@ -76,17 +76,16 @@ export const ExpressLogo = () =>{
 
   const textStyle = {
     font: "400% helvetica neue,open sans,sans-serif",
-    textShadow: "2px 1px black",
+    textShadow: "2px 2px black",
     fontWeight: "100",
-    lineHeight: "300%",
-    color: "#969696"
+    color: "#969696",
   };
 
   return (
     <TrackVisibility partialVisibility>
       {({isVisible})=>{
         return (
-          <span className="expressLogo" style={textStyle}>
+          <span  style={textStyle}>
             Express
           </span>
         )

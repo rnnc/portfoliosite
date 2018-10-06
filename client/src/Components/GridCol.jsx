@@ -24,7 +24,7 @@ export default class GridCol extends Component {
 
         {this.props.children}
 
-        <div className="info" hidden={this.state.selected}>
+        <div className="info" hidden={!this.state.selected}>
           <div>hell</div>
         </div>
 

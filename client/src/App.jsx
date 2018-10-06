@@ -22,13 +22,6 @@ import GridCol from './Components/GridCol';
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      logoDescrip: false
-    };
-  }
-
   introAnimation() {
     TweenMax.fromTo('.header', 0.75, {
       opacity: 0,
@@ -78,9 +71,8 @@ class App extends Component {
         <div className="grid">
           <GridCol><ReactLogo /></GridCol>
           <GridCol><ReduxLogo /></GridCol>
-          {/* <div className="col"><ReduxLogo /></div> */}
-          <div className="col"><ApolloLogo /></div>
-          <div className="col"><ExpressLogo /></div>
+          <GridCol><ApolloLogo /></GridCol>
+          <GridCol><ExpressLogo /></GridCol>
         </div>
 
       </React.Fragment>
