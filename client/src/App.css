@@ -22,9 +22,9 @@ body {
 .logo_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  padding-top: 10%;
-  padding-bottom: 20%;
+  grid-template-rows: 1fr;
+  gap: 5% 5%;
+  padding: 5%;
   overflow: visible;
   transition-delay: 2s;
 }
@@ -58,7 +58,9 @@ body {
   z-index: 1;
   transition: all 0.25s;
   text-align: center;
-  padding-top: 30px;
+  /* padding-top: 30px; */
+  padding: 5% 0 5% 0;
+  clip: rect(2em, 0, 2em, 0);
 }
 
 .selected {
