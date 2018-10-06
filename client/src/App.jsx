@@ -8,14 +8,14 @@ import {
   IntroHeader, IntroPara,
 } from './Components/Styled';
 
-import LogoCard from './Components/LogoCard';
+import LogoCard from './Components/Logos/LogoCard';
 
-import { ReactLogo, ReduxLogo, ApolloLogo } from './FrontEndLogos';
+import { ReactLogo, ReduxLogo, ApolloLogo } from './Components/Logos/FrontEndLogos';
 
 import {
   WebpackLogo, NodeJSLogo, ExpressLogo,
   GraphQlLogo, MongoDBLogo
-} from './BackEndLogos';
+} from './Components/Logos/BackEndLogos';
 
 import TrackVisibility from 'react-on-screen';
 
@@ -107,26 +107,18 @@ class App extends Component {
 
           <div className="logoCard">
             <NodeJSLogo />
-            <br />
-            <label>NodeJS</label>
           </div>
 
           <div className="logoCard">
             <WebpackLogo />
-            <br />
-            <label>Webpack</label>
           </div>
 
           <div className="logoCard">
             <ExpressLogo />
-            {/* <br />
-            <label>ExpressJS</label> */}
           </div>
 
           <div className="logoCard">
             <GraphQlLogo />
-            <br />
-            <label>GraphQL</label>
           </div>
 
           <div className="logoCard">
