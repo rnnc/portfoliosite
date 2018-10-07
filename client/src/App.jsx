@@ -98,6 +98,9 @@ class App extends Component {
           <LogoCard>
             <ApolloLogo />
           </LogoCard>
+          <LogoCard>
+            <ApolloLogo />
+          </LogoCard>
 
         </div>
 
@@ -105,25 +108,25 @@ class App extends Component {
 
         <div className="logo_container">
 
-          <div className="logoCard">
+          <LogoCard>
             <NodeJSLogo />
-          </div>
+          </LogoCard>
 
-          <div className="logoCard">
+          <LogoCard>
             <WebpackLogo />
-          </div>
+          </LogoCard>
 
-          <div className="logoCard">
+          <LogoCard>
             <ExpressLogo />
-          </div>
+          </LogoCard>
 
-          <div className="logoCard">
+          <LogoCard>
             <GraphQlLogo />
-          </div>
+          </LogoCard>
 
-          <div className="logoCard">
+          <LogoCard>
             <MongoDBLogo />
-          </div>
+          </LogoCard>
 
         </div>
 

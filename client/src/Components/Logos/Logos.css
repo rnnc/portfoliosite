@@ -5,11 +5,12 @@
 }
 
 .expressLogo {
-  font: 400% helvetica neue, open sans, sans-serif;
+  font: 4vw helvetica neue, open sans, sans-serif;
   text-shadow: 2px 2px black;
   font-weight: 100;
-  line-height: 275%;
-  color: #444;
+  line-height: 220%;
+  color: #969696;
+  transition: all .2s;
 }
 
 .mongoLogo {
@@ -18,10 +19,13 @@
   padding-top: 11%;
 }
 
-@media only screen and (min-width: 1300px) {
+
+
+@media only screen and (max-width: 1300px) {
   .logos {
     height: 40%;
     width: 40%;
+    padding-top: 14%;
   }
   .mongoLogo {
     height: 70%;
@@ -29,7 +33,7 @@
     padding-top: 6%;
   }
   .expressLogo {
-    font-size: 400%;
+    font-size: 300%;
   }
 }
 
@@ -39,15 +43,10 @@
   }
 }
 
-/* @media only screen and (max-width: 1500px){
-  .expressLogo{
-    font-size: 550%;
-  }
-} */
-
 @media only screen and (max-width: 600px) {
   .expressLogo {
     font-size: 200%;
+    transition: all .2s;
   }
 }
 

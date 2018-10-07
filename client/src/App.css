@@ -21,12 +21,12 @@ body {
 
 .logo_container {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: minmax(5%, auto);
-  gap: 5%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 5% 5%;
   padding: 5%;
   overflow: visible;
-  transition-delay: 2s;
+  transition: all 2s;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -35,7 +35,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .logo_container {
     grid-template-columns: 1fr 1fr;
   }
@@ -59,7 +59,7 @@ body {
   transition: all 0.25s;
   text-align: center;
   /* padding-top: 30px; */
-  padding: 5% 0 5% 0;
+  padding-bottom: 5%;
   clip: rect(2em, 0, 2em, 0);
 }
 

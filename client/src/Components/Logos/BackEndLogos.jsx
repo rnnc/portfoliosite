@@ -88,7 +88,7 @@ export const ExpressLogo = () =>{
     <TrackVisibility partialVisibility>
       {({isVisible})=>{
         return (
-          <span className="expressLogo" style={textStyle}>
+          <span className="expressLogo">
             Express
           </span>
         )
