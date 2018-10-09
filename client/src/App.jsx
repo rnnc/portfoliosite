@@ -98,9 +98,6 @@ class App extends Component {
           <LogoCard>
             <ApolloLogo />
           </LogoCard>
-          <LogoCard>
-            <ApolloLogo />
-          </LogoCard>
 
         </div>
 

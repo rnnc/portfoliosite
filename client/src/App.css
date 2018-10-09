@@ -23,7 +23,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  grid-gap: 5% 5%;
+  grid-auto-flow: dense;
+  grid-gap: 1.25em 2%;
   padding: 5%;
   overflow: visible;
   transition: all 2s;
@@ -59,7 +60,6 @@ body {
   transition: all 0.25s;
   text-align: center;
   /* padding-top: 30px; */
-  padding-bottom: 5%;
   clip: rect(2em, 0, 2em, 0);
 }
 
@@ -74,16 +74,8 @@ body {
   transition: all 0.75s;
 }
 
-.logoCard:hover.selected {
-  box-shadow: 0;
-}
-
 .info {
   position: relative;
   top: 50%;
   background: black;
 }
-
-/* .reac{
-  padding: 5% 0 5% 0;
-} */

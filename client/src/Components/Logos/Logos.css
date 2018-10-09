@@ -1,7 +1,24 @@
 .logos {
-  height: 50%;
-  width: 50%;
   transition: all 0.5s;
+  position: relative;
+  height: 43%;
+  width: 43%;
+}
+
+.svgLogos {
+  display: inline-block;
+  margin: 0 auto;
+  position: absolute;
+  top: 32%;
+  left: 62.5%;
+}
+
+.svgLogos.redux {
+  top: 32%;
+}
+
+.svgLogos.apollo {
+  top: 24%;
 }
 
 .expressLogo {
@@ -19,13 +36,10 @@
   padding-top: 11%;
 }
 
-
-
 @media only screen and (max-width: 1300px) {
   .logos {
-    height: 40%;
-    width: 40%;
-    padding-top: 14%;
+    height: 45%;
+    width: 45%;
   }
   .mongoLogo {
     height: 70%;

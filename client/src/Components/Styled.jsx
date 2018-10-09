@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import topBgImage from '../images/intro_bg.jpg';
+import topBgImage from '../images/bg_buildings.jpg';
 
 const cbTransition = `cubic-bezier(.2,1.08,.68,.96) 0.5s`;
 
@@ -63,10 +63,4 @@ export const IntroPara = styled.div`
   }
 
   font-size: 2vw;
-`;
-
-export const Page2 = styled.div`
-  height: 100vh;
-  padding: 10px;
-  text-align: center;
 `;
