@@ -21,15 +21,6 @@ import TrackVisibility from 'react-on-screen';
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      logoDescrip: false
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
   introAnimation() {
     TweenMax.fromTo('.header', 0.75, {
       opacity: 0,
@@ -49,14 +40,6 @@ class App extends Component {
         opacity: 1,
         x: 0,
       })
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    const tState = this.state.logoDescrip ? false : true;
-    this.setState({
-      logoDescrip: tState
-    });
   }
 
   render() {
@@ -124,22 +107,6 @@ class App extends Component {
           <LogoCard>
             <MongoDBLogo />
           </LogoCard>
-
-        </div>
-
-        <h2 className="descriptor">Other</h2>
-
-        <div className="logo_container">
-
-          <div className="logo_container">
-            <label>Stuff</label>
-          </div>
-          <div className="logo_container">
-            <label>Stuff</label>
-          </div>
-          <div className="logo_container">
-            <label>Stuff</label>
-          </div>
 
         </div>
 

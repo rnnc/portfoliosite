@@ -18,7 +18,7 @@ export const NodeJSLogo =()=> {
   };
 
   return (
-    <TrackVisibility partialVisibility>
+    <TrackVisibility partialVisibility className="logos">
       {({isVisible})=>{
   
         if(isVisible)
@@ -37,7 +37,7 @@ export const NodeJSLogo =()=> {
           })
 
         return (
-          <svg className="logos" viewBox="0 0 36.8 40.8">
+          <svg className="svgLogos nodejs" viewBox="0 0 36.8 40.8">
             <path className={classnames("nodejsLogo_S",{"nodejsLogo_S_entered":isVisible})} 
             fill={nodegreen} d="M23,28.8c-6.4,0-7.8-3-7.8-5.4c0-0.2,0.2-0.4,0.4-0.4h1.9c0.2,0,0.4,0.2,0.4,0.4c0.3,1.9,1.1,2.9,5,2.9
             	c3.1,0,4.4-0.7,4.4-2.3c0-0.9-0.4-1.7-5.2-2.1c-4-0.4-6.5-1.3-6.5-4.5c0-3,2.5-4.7,6.7-4.7c4.7,0,7,1.6,7.3,5.1c0,0.1,0,0.2-0.1,0.3
@@ -56,11 +56,11 @@ export const NodeJSLogo =()=> {
 export const WebpackLogo = () => {
   
   return (
-    <TrackVisibility partialVisibility>
+    <TrackVisibility partialVisibility className="logos">
       {({isVisible})=>{
       
         return (
-        <svg className="logos" viewBox="0 0 700 786.1">
+        <svg className="svgLogos webpack" viewBox="0 0 700 786.1">
           <path fill="#1C78C0" d="M336.3,605.5L148.7,502.3V298l187.6,108.3V605.5z M363.1,605.5l187.6-103.1V298L363.1,406.3V605.5z
 	          M161.4,274.4l188.3-103.5L538,274.4L349.7,383.1L161.4,274.4z"/>
           <path fill="#8ED6FB" d="M668.2,597.9L363.1,770.5V636.1l190.1-104.6L668.2,597.9L668.2,597.9z M689.1,579V218.1l-111.6,64.5v232
@@ -85,10 +85,10 @@ export const ExpressLogo = () =>{
   };
 
   return (
-    <TrackVisibility partialVisibility>
+    <TrackVisibility partialVisibility className="logos">
       {({isVisible})=>{
         return (
-          <span className="expressLogo">
+          <span className="svgLogos expressjs">
             Express
           </span>
         )
@@ -109,7 +109,7 @@ export const GraphQlLogo = () => {
   };
   
   return (
-    <TrackVisibility partialVisibility>
+    <TrackVisibility partialVisibility  className="logos">
       {({isVisible})=>{
       
         if(isVisible)
@@ -131,7 +131,7 @@ export const GraphQlLogo = () => {
         const lineClassname = "graphqlLogo_path";
         
         return (
-          <svg className="logos" viewBox="0 0 400 400">
+          <svg className="svgLogos" viewBox="0 0 400 400">
             <line className={lineClassname} style={pathStyle} x1="60.8" y1="280.5" x2="60.8" y2="119.6"/>
             <line className={lineClassname} style={pathStyle} x1="60.8" y1="119.6" x2="200" y2="39.1"/>
             <line className={lineClassname} style={pathStyle} x1="200" y1="39.1" x2="339.4" y2="119.6"/>
@@ -157,10 +157,10 @@ export const GraphQlLogo = () => {
 
 export const MongoDBLogo = () => {
   return (
-    <TrackVisibility partialVisibility>
+    <TrackVisibility partialVisibility className="logos">
       {({isVisible})=>{
         return (
-          <svg className="mongoLogo" viewBox="0 0 512 146"
+          <svg className="svgLogos mongodb" viewBox="0 0 512 146"
             style={{
               filter: `blur(${isVisible?'0px':'20px'})`,
               transition: `all 0.5s`

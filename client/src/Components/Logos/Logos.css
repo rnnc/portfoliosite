@@ -9,56 +9,70 @@
   display: inline-block;
   margin: 0 auto;
   position: absolute;
-  top: 32%;
-  left: 62.5%;
+  top: 26%;
+  left: 65%;
+  transition: all .7s;
 }
 
 .svgLogos.redux {
-  top: 32%;
+  top: 22%;
 }
 
 .svgLogos.apollo {
-  top: 24%;
+  top: 15%;
 }
 
-.expressLogo {
+.svgLogos.nodejs {
+  top: 20%;
+}
+
+.svgLogos.webpack {
+  top: 20%;
+}
+
+.svgLogos.expressjs {
   font: 4vw helvetica neue, open sans, sans-serif;
   text-shadow: 2px 2px black;
   font-weight: 100;
-  line-height: 220%;
+  /* line-height: 220%; */
+  top: 60%;
   color: #969696;
   transition: all .2s;
 }
 
-.mongoLogo {
-  height: 100%;
-  width: 100%;
-  padding-top: 11%;
+.svgLogos.mongodb {
+  top: 35%;
+}
+
+@media only screen and (max-width: 1600px) {
+  .svgLogos, .svgLogos.redux, .svgLogos.apollo {
+    top: 40%;
+    transition: all .7s;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
   .logos {
-    height: 45%;
     width: 45%;
   }
-  .mongoLogo {
+  .svgLogos.mongodb {
     height: 70%;
     width: 70%;
     padding-top: 6%;
   }
-  .expressLogo {
+  .svgLogos.expressjs {
     font-size: 300%;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .expressLogo {
+  .svgLogos.expressjs {
     font-size: 300%;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .expressLogo {
+  .svgLogos.expressjs {
     font-size: 200%;
     transition: all .2s;
   }

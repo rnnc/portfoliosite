@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import classnames from 'classnames';
 
+import Collapse from 'react-collapse';
+
 export default class LogoCard extends Component {
   state = {
     selected: false
