@@ -41,6 +41,7 @@
     "react-collapse": "^4.0.3",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.1",
+    "react-intersection-observer": "^6.2.3",
     "react-motion": "^0.5.2",
     "react-on-screen": "^2.0.4",
     "react-particles-js": "^2.3.0",

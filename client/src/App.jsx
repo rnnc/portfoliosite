@@ -10,7 +10,10 @@ import {
 
 import LogoCard from './Components/Logos/LogoCard';
 
-import { ReactLogo, ReduxLogo, ApolloLogo } from './Components/Logos/FrontEndLogos';
+import { 
+  ReactLogo, ReduxLogo, 
+  ApolloLogo
+} from './Components/Logos/FrontEndLogos';
 
 import {
   WebpackLogo, NodeJSLogo, ExpressLogo,
