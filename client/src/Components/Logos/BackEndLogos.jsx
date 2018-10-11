@@ -1,7 +1,6 @@
 import React from 'react';
+import Observer from 'react-intersection-observer';
 import classnames from 'classnames';
-
-import TrackVisibility from 'react-on-screen';
 import anime from 'animejs';
 
 import './Logos.css';
@@ -17,8 +16,8 @@ export const NodeJSLogo =()=> {
     strokeMiterlimit: 10
   };
 
-  const animate = (isVisible) => (
-    (isVisible)
+  const animate = (inView) => (
+    (inView)
     ?
       anime({
         targets: ".nodejsLogo_path",
@@ -36,14 +35,14 @@ export const NodeJSLogo =()=> {
   )
 
   return (
-    <TrackVisibility partialVisibility>
-      {({isVisible})=>{
+    <Observer threshold={0.75}>
+      {({inView, ref})=>{
   
-        animate(isVisible);
+        animate(inView);
 
         return (
-          <svg className="svgLogos nodejs" viewBox="0 0 36.8 40.8">
-            <path className={classnames("nodejsLogo_S",{"visible":isVisible})} 
+          <svg className="svgLogos nodejs" viewBox="0 0 36.8 40.8" ref={ref}>
+            <path className={classnames("nodejsLogo_S",{"visible":inView})} 
             fill={nodegreen} d="M23,28.8c-6.4,0-7.8-3-7.8-5.4c0-0.2,0.2-0.4,0.4-0.4h1.9c0.2,0,0.4,0.2,0.4,0.4c0.3,1.9,1.1,2.9,5,2.9
             	c3.1,0,4.4-0.7,4.4-2.3c0-0.9-0.4-1.7-5.2-2.1c-4-0.4-6.5-1.3-6.5-4.5c0-3,2.5-4.7,6.7-4.7c4.7,0,7,1.6,7.3,5.1c0,0.1,0,0.2-0.1,0.3
             	c-0.1,0.1-0.2,0.1-0.3,0.1h-1.9c-0.2,0-0.4-0.1-0.4-0.3c-0.5-2-1.6-2.7-4.6-2.7c-3.4,0-3.8,1.2-3.8,2.1c0,1.1,0.5,1.4,5,2
@@ -54,28 +53,27 @@ export const NodeJSLogo =()=> {
           </svg>
         )
       }}
-    </TrackVisibility>
+    </Observer>
   )
 }
 
 export const WebpackLogo = () => {
   
   return (
-    <TrackVisibility partialVisibility>
-      {({isVisible})=>{
-      
+    <Observer threshold={0.75}>
+      {({inView, ref})=>{
         return (
-        <svg className="svgLogos webpack" viewBox="0 0 700 786.1">
-          <path fill="#1C78C0" d="M336.3,605.5L148.7,502.3V298l187.6,108.3V605.5z M363.1,605.5l187.6-103.1V298L363.1,406.3V605.5z
-	          M161.4,274.4l188.3-103.5L538,274.4L349.7,383.1L161.4,274.4z"/>
-          <path fill="#8ED6FB" d="M668.2,597.9L363.1,770.5V636.1l190.1-104.6L668.2,597.9L668.2,597.9z M689.1,579V218.1l-111.6,64.5v232
-          	L689.1,579L689.1,579z M31.2,597.9l305.1,172.6V636.1L146.1,531.5L31.2,597.9L31.2,597.9z M10.3,579V218.1l111.6,64.5v232L10.3,579z
-          	M23.4,194.7l312.9-177v129.9L135.8,257.9l-1.6,0.9L23.4,194.7L23.4,194.7z M676,194.7l-312.9-177v129.9l200.5,110.2l1.6,0.9
-          	L676,194.7L676,194.7z"/>
-        </svg>
+          <svg className="svgLogos webpack" viewBox="0 0 700 786.1" ref={ref}>
+            <path fill="#1C78C0" d="M336.3,605.5L148.7,502.3V298l187.6,108.3V605.5z M363.1,605.5l187.6-103.1V298L363.1,406.3V605.5z
+              M161.4,274.4l188.3-103.5L538,274.4L349.7,383.1L161.4,274.4z"/>
+            <path fill="#8ED6FB" d="M668.2,597.9L363.1,770.5V636.1l190.1-104.6L668.2,597.9L668.2,597.9z M689.1,579V218.1l-111.6,64.5v232
+              L689.1,579L689.1,579z M31.2,597.9l305.1,172.6V636.1L146.1,531.5L31.2,597.9L31.2,597.9z M10.3,579V218.1l111.6,64.5v232L10.3,579z
+              M23.4,194.7l312.9-177v129.9L135.8,257.9l-1.6,0.9L23.4,194.7L23.4,194.7z M676,194.7l-312.9-177v129.9l200.5,110.2l1.6,0.9
+              L676,194.7L676,194.7z"/>
+          </svg>
         );
       }}
-    </TrackVisibility>
+    </Observer>
   )
 }
 
@@ -90,15 +88,15 @@ export const ExpressLogo = () =>{
   };
 
   return (
-    <TrackVisibility partialVisibility>
-      {({isVisible})=>{
+    <Observer threshold={0.75}>
+      {({inView, ref})=>{
         return (
-          <span className="svgLogos expressjs" style={textStyle}>
+          <span className="svgLogos expressjs" style={textStyle} ref={ref}>
             Express
           </span>
         )
       }}
-    </TrackVisibility>
+    </Observer>
   )
 }
 
@@ -113,8 +111,8 @@ export const GraphQlLogo = () => {
     strokeMiterlimit: 10
   };
   
-  const animate = (isVisible)=> (
-    (isVisible)
+  const animate = (inView)=> (
+    (inView)
     ? 
       anime({
         targets: ".graphqlLogo_path",
@@ -132,16 +130,16 @@ export const GraphQlLogo = () => {
   );
 
   return (
-    <TrackVisibility partialVisibility >
-      {({isVisible})=>{
+    <Observer  threshold={0.75} >
+      {({inView, ref})=>{
       
-        animate(isVisible);
+        animate(inView);
 
-        const circleClassname = classnames("graphqlLogo_circle",{"visible":isVisible});
+        const circleClassname = classnames("graphqlLogo_circle",{"visible":inView});
         const lineClassname = "graphqlLogo_path";
         
         return (
-          <svg className="svgLogos" viewBox="0 0 400 400">
+          <svg className="svgLogos" viewBox="0 0 400 400" ref={ref}>
             <line className={lineClassname} style={pathStyle} x1="60.8" y1="280.5" x2="60.8" y2="119.6"/>
             <line className={lineClassname} style={pathStyle} x1="60.8" y1="119.6" x2="200" y2="39.1"/>
             <line className={lineClassname} style={pathStyle} x1="200" y1="39.1" x2="339.4" y2="119.6"/>
@@ -160,17 +158,17 @@ export const GraphQlLogo = () => {
           </svg>
         );
       }}
-    </TrackVisibility>
+    </Observer>
   )
 
 }
 
 export const MongoDBLogo = () => {
   return (
-    <TrackVisibility partialVisibility>
-      {({isVisible})=>{
+    <Observer  threshold={0.75}>
+      {({inView, ref})=>{
         return (
-          <svg className={classnames("svgLogos mongodb",{"visible":isVisible})} viewBox="0 0 512 146">
+          <svg className={classnames("svgLogos mongodb",{"visible":inView})} viewBox="0 0 512 146" ref={ref}>
             <path fill="#8E714E" d="M466.2,62c-0.4,0.1-0.9,1-0.9,1.6c-0.1,3.5-0.2,12.7-0.2,19c0,0.2,0.3,0.5,0.5,0.5c1.3,0.1,4.4,0.2,7.1,0.2
               c3.7,0,5.9-0.5,7.1-1c3.1-1.6,4.6-5,4.6-8.7c0-8.4-5.9-11.7-14.7-11.7C469.2,61.7,467.5,61.7,466.2,62L466.2,62L466.2,62z
                M488.6,100.9c0-8.6-6.3-13.4-17.8-13.4c-0.5,0-4.2-0.1-5,0.1c-0.3,0.1-0.6,0.3-0.6,0.5c0,6.2-0.1,16,0.2,19.8
@@ -236,6 +234,6 @@ export const MongoDBLogo = () => {
           </svg>
         )
       }}
-    </TrackVisibility>
+    </Observer>
   )
 }

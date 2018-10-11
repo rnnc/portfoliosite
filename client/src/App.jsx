@@ -10,8 +10,8 @@ import {
 
 import LogoCard from './Components/Logos/LogoCard';
 
-import { 
-  ReactLogo, ReduxLogo, 
+import {
+  ReactLogo, ReduxLogo,
   ApolloLogo
 } from './Components/Logos/FrontEndLogos';
 
@@ -20,7 +20,7 @@ import {
   GraphQlLogo, MongoDBLogo
 } from './Components/Logos/BackEndLogos';
 
-import TrackVisibility from 'react-on-screen';
+import Observer from 'react-intersection-observer';
 
 class App extends Component {
 
@@ -53,19 +53,23 @@ class App extends Component {
 
         <TopContent>
           <BGScreen />
-          <TrackVisibility partialVisibility>
-            {({ isVisible }) => {
-              if (isVisible)
+          <Observer>
+            {({ inView, ref }) => {
+              if (inView)
                 this.introAnimation();
               else {
                 TweenMax.staggerTo(['.header', '.paragraph'], 0.1, {
                   opacity: 0
                 }, 0.1)
               }
+              return (
+                <div ref={ref}>
+                  <IntroHeader className="header">Stuff to fill space</IntroHeader>
+                  <IntroPara className="paragraph">some stuff that comes before</IntroPara>
+                </div>
+              )
             }}
-          </TrackVisibility>
-          <IntroHeader className="header">Stuff to fill space</IntroHeader>
-          <IntroPara className="paragraph">some stuff that comes before</IntroPara>
+          </Observer>
         </TopContent>
 
 
