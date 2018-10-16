@@ -51,10 +51,20 @@
 
 .info.selected {
   transition: all 0.5s;
-  height: 15em;
+  height: auto;
   overflow: visible;
+  padding: 1em;
   opacity: 1;
   margin-left: 4%;
+}
+
+.info-content {
+  opacity: 0;
+}
+
+.info-content.selected{
+  opacity: 1;
+  transition-delay: 1s;
 }
 
 @media screen and (min-width: 1400px) {
