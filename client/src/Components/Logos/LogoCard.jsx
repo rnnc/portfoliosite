@@ -1,18 +1,15 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import classnames from 'classnames';
 
-import Collapse from 'react-collapse';
+export default class LogoCard extends PureComponent {
 
-export default class LogoCard extends Component {
   state = {
     selected: false
   }
 
   handleClick(e) {
     e.preventDefault();
-    this.setState({
-      selected: this.state.selected ? false : true
-    })
+    this.setState({ selected: !this.state.selected })
   }
 
   render() {
@@ -20,15 +17,19 @@ export default class LogoCard extends Component {
     const { selected } = this.state;
 
     return (
-      <div
-        className={classnames("logoCard", { selected })}
-        onClick={this.handleClick.bind(this)}
-      >
-        {this.props.children}
-        <div className="info" hidden={!selected}>
-          yo
+      <div onClick={this.handleClick.bind(this)}
+        className={classnames("logoCard", `${this.props.classType}`, { selected })} >
+
+        <div className={classnames("innerCard", { selected })}>
+          {this.props.children}
         </div>
-      </div>
+
+
+        <div className={classnames("info", { selected })}>
+          <div>Info</div>
+        </div>
+
+      </div >
     )
   }
 }

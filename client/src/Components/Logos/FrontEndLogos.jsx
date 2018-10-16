@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Observer from 'react-intersection-observer';
 import classnames from 'classnames';
 import anime from 'animejs';

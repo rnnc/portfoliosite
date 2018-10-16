@@ -35,7 +35,7 @@ export const NodeJSLogo =()=> {
   )
 
   return (
-    <Observer threshold={0.75}>
+    <Observer threshold={0.5}>
       {({inView, ref})=>{
   
         animate(inView);

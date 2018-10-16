@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import topBgImage from '../images/bg_buildings.jpg';
+import topBgImage from '../images/bg_code.jpg';
 
 const cbTransition = `cubic-bezier(.2,1.08,.68,.96) 0.5s`;
 
@@ -30,7 +30,7 @@ export const IntroHeader = styled.h1`
   color: #FFF;
   z-index: 1;
   display: inline-block;
-  font-size: 4vw;
+  font-size: 4em;
 
   :hover{
     transition: ${cbTransition};
@@ -39,7 +39,7 @@ export const IntroHeader = styled.h1`
 
   @media only screen and (max-width:1000px){
     transition: ${cbTransition};
-    font-size: 5vw;
+    font-size: 3em;
   }
 `;
 

@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
-
 import { TweenMax, Power4 } from 'gsap';
+import Observer from 'react-intersection-observer';
+
+import './App.css';
 
 import {
   TopContent, BGScreen,
   IntroHeader, IntroPara,
 } from './Components/Styled';
 
-import LogoCard from './Components/Logos/LogoCard';
-
-import {
-  ReactLogo, ReduxLogo,
-  ApolloLogo
-} from './Components/Logos/FrontEndLogos';
-
-import {
-  WebpackLogo, NodeJSLogo, ExpressLogo,
-  GraphQlLogo, MongoDBLogo
-} from './Components/Logos/BackEndLogos';
-
-import Observer from 'react-intersection-observer';
+import LogosContainer from './Components/Logos/LogosContainer';
 
 class App extends Component {
 
@@ -72,50 +61,10 @@ class App extends Component {
           </Observer>
         </TopContent>
 
+        <LogosContainer />
 
-        <h2 className="descriptor"> Front End Technologies </h2>
 
-        <div className="logo_container">
 
-          <LogoCard>
-            <ReactLogo />
-          </LogoCard>
-
-          <LogoCard>
-            <ReduxLogo />
-          </LogoCard>
-
-          <LogoCard>
-            <ApolloLogo />
-          </LogoCard>
-
-        </div>
-
-        <h2 className="descriptor"> Back End Technologies </h2>
-
-        <div className="logo_container">
-
-          <LogoCard>
-            <NodeJSLogo />
-          </LogoCard>
-
-          <LogoCard>
-            <WebpackLogo />
-          </LogoCard>
-
-          <LogoCard>
-            <ExpressLogo />
-          </LogoCard>
-
-          <LogoCard>
-            <GraphQlLogo />
-          </LogoCard>
-
-          <LogoCard>
-            <MongoDBLogo />
-          </LogoCard>
-
-        </div>
 
       </React.Fragment>
     )
