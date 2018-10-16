@@ -3,22 +3,15 @@ import classnames from 'classnames';
 
 export default class LogoCard extends PureComponent {
 
-  state = {
-    selected: false
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    this.setState({ selected: !this.state.selected })
-  }
+  handleClick = () => this.props.onClick(this.props.index);
 
   render() {
 
-    const { selected } = this.state;
+    const selected = this.props.isActive;
 
     return (
-      <div onClick={this.handleClick.bind(this)}
-        className={classnames("logoCard", `${this.props.classType}`, { selected })} >
+      <div onClick={this.handleClick}
+        className={classnames("logoCard", { selected })} >
 
         <div className={classnames("innerCard", { selected })}>
           {this.props.children}

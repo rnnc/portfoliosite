@@ -54,6 +54,7 @@
   height: 15em;
   overflow: visible;
   opacity: 1;
+  margin-left: 4%;
 }
 
 @media screen and (min-width: 1400px) {
@@ -91,10 +92,10 @@
     margin-left: -96%;
   }
   .logo_container.backend .logoCard.selected:nth-of-type(3n+4) .info.selected {
-    margin-left: -48%;
+    margin-left: -46%;
   }
   .logo_container.backend .logoCard.selected:nth-of-type(3n+5) .info.selected {
-    margin-left: -144%;
+    margin-left: -146%;
   }
 }
 
@@ -106,19 +107,20 @@
     margin-left: -96%;
   }
   .logoCard.selected:nth-last-child(1) .info.selected {
-    margin-left: -50%;
+    margin-left: -46%;
   }
 }
 
 @media screen and (max-width: 728px) {
   .info.selected {
-    width: calc(85vw - 5%);
-    margin-left: -17vw;
+    width: 34em;
+    margin-left: -30%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .info.selected {
+    width: 28em;
     margin-left: -16%;
   }
 }
