@@ -10,9 +10,12 @@ export default class LogoCard extends PureComponent {
     const selected = this.props.isActive;
 
     return (
-      <div className={ classnames("logoCard", { selected }) } onClick={ this.handleClick }>
+      <div className={ classnames("logoCard", { selected }) }>
 
-        <div className={ classnames("innerCard", { selected }) }>
+        <div
+          className={ classnames("innerCard", { selected }) }
+          onClick={ this.handleClick }
+        >
           { this.props.children[0] }
         </div>
 
