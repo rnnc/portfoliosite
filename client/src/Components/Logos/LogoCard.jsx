@@ -10,18 +10,16 @@ export default class LogoCard extends PureComponent {
     const selected = this.props.isActive;
 
     return (
-      <div onClick={ this.handleClick }
-        className={ classnames("logoCard", { selected }) } >
+      <div className={ classnames("logoCard", { selected }) } onClick={ this.handleClick }>
 
         <div className={ classnames("innerCard", { selected }) }>
-          { this.props.children }
-          { console.log(this.props.children[1]) }
+          { this.props.children[0] }
         </div>
 
 
         <div className={ classnames("info", { selected }) }>
           <div className={ classnames("info-content", { selected }) }>
-            { "Lorem ipsum dolor sit amet, ne vix movet labore menandri, tantas euismod invidunt mea ut. Quo omnis essent expetendis et, errem ridens repudiare sit eu. No per volumus vituperata ullamcorper, sit sint aperiri aliquid in, perpetua tincidunt in vel. Mei ea imperdiet pertinacia scribentur, no augue eleifend adversarium eos. Id eam oratio detraxit quaestio. Sed officiis persecuti conceptam an, ei eum erant abhorreant." }
+            { this.props.children[1] }
           </div>
         </div>
 

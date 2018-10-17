@@ -13,13 +13,14 @@
   text-align: center;
   position: relative;
   margin-bottom: 2em;
+  padding: 0 1em 0 1em;
 }
 
 .innerCard {
   width: 100%;
   position: relative;
   transition: all 0.5s;
-  height: 18em;
+  height: 17em;
 }
 
 .innerCard.selected {
@@ -50,88 +51,89 @@
 }
 
 .info.selected {
-  transition: all 0.5s;
-  height: auto;
+  transition: all 0.5s 0.25s;
+  height: 10em;
   overflow: visible;
-  padding: 1em;
+  padding: 2em;
   opacity: 1;
-  margin-left: 4%;
+  margin-left: -2%;
 }
 
 .info-content {
   opacity: 0;
 }
 
-.info-content.selected{
+.info-content.selected {
   opacity: 1;
-  transition-delay: 1s;
+  transition: all 0.5s ease-in-out 0.5s;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1392px) {
   .info.selected {
     width: 62em;
   }
   .logoCard.selected:nth-of-type(2n) .info.selected {
-    margin-left: -96%;
+    margin-left: -113%;
   }
   .logoCard.selected:nth-last-child(1) .info.selected {
-    margin-left: -196%;
+    margin-left: -223%;
   }
   .logo_container.backend .logoCard.selected:nth-of-type(3) .info.selected {
-    margin-left: -96%;
+    margin-left: -113%;
   }
 }
 
-@media screen and (min-width: 1400px) and (max-width: 1736px) {
+@media screen and (min-width: 1392px) and (max-width: 1729px) {
   .logoCard.selected:nth-of-type(4) .info.selected {
-    margin-left: -196%;
+    margin-left: -223%;
   }
   .logoCard.selected:nth-of-type(5) .info.selected {
-    margin-left: -96%;
+    margin-left: -113%;
   }
 }
 
-@media screen and (min-width:1063px) and (max-width: 1400px) {
+@media screen and (min-width:1057px) and (max-width: 1392px) {
   .info.selected {
     width: 62em;
   }
   .logoCard.selected:nth-of-type(3n+0) .info.selected {
-    margin-left: -196%;
+    margin-left: -223%;
   }
   .logoCard.selected:nth-of-type(3n+2) .info.selected {
-    margin-left: -96%;
+    margin-left: -113%;
   }
   .logo_container.backend .logoCard.selected:nth-of-type(3n+4) .info.selected {
-    margin-left: -46%;
+    margin-left: -56%;
   }
   .logo_container.backend .logoCard.selected:nth-of-type(3n+5) .info.selected {
-    margin-left: -146%;
+    margin-left: -166%;
   }
 }
 
-@media screen and (min-width:728px) and (max-width: 1063px) {
+@media screen and (min-width:721px) and (max-width: 1057px) {
   .info.selected {
     width: 41.5em;
   }
   .logoCard.selected:nth-of-type(2n+2) .info.selected {
-    margin-left: -96%;
+    margin-left: -113%;
   }
   .logoCard.selected:nth-last-child(1) .info.selected {
-    margin-left: -46%;
+    margin-left: -56%;
   }
 }
 
-@media screen and (max-width: 728px) {
+@media screen and (max-width: 721px) {
   .info.selected {
     width: 34em;
-    margin-left: -30%;
+    margin-left: -38%;
+    height: auto;
   }
 }
 
 @media screen and (max-width: 600px) {
   .info.selected {
     width: 28em;
-    margin-left: -16%;
+    margin-left: -23%;
   }
 }
 

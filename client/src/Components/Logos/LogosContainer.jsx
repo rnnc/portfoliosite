@@ -14,8 +14,12 @@ import {
   GraphQlLogo, MongoDBLogo
 } from './BackEndLogos';
 
-export default class LogosContainer extends Component {
+const FrontEnd = [ReactLogo, ReduxLogo, ApolloLogo];
+const BackEnd = [WebpackLogo, NodeJSLogo, ExpressLogo, GraphQlLogo, MongoDBLogo];
 
+const ipsumLorem = "Lorem ipsum dolor sit amet, ne vix movet labore menandri, tantas euismod invidunt mea ut. Quo omnis essent expetendis et, errem ridens repudiare sit eu. No per volumus vituperata ullamcorper, sit sint aperiri aliquid in, perpetua tincidunt in vel. Mei ea imperdiet pertinacia scribentur, no augue eleifend adversarium eos. Id eam oratio detraxit quaestio. Sed officiis persecuti conceptam an, ei eum erant abhorreant."
+
+export default class LogosContainer extends Component {
 
   state = {
     activeLogo: null
@@ -32,51 +36,44 @@ export default class LogosContainer extends Component {
 
   render() {
 
+
+
     return (
       <React.Fragment>
 
         <h2 className="descriptor"> Front End Technologies </h2>
-
         <div className="logo_container frontend" >
-
-          <LogoCard index={ 0 } isActive={ this.state.activeLogo === 0 } onClick={ this.handleClick }>
-            <ReactLogo />
-          </LogoCard>
-
-
-          <LogoCard index={ 1 } isActive={ this.state.activeLogo === 1 } onClick={ this.handleClick }>
-            <ReduxLogo />
-          </LogoCard>
-
-          <LogoCard index={ 2 } isActive={ this.state.activeLogo === 2 } onClick={ this.handleClick }>
-            <ApolloLogo />
-          </LogoCard>
-
+          {
+            FrontEnd.map((Logo, i) => (
+              <LogoCard
+                key={ i } index={ i }
+                isActive={ this.state.activeLogo === i }
+                onClick={ this.handleClick }
+              >
+                <Logo />
+                {ipsumLorem}
+              </LogoCard>
+            ))
+          }
         </div>
 
         <h2 className="descriptor"> Back End Technologies </h2>
         <div className="logo_container backend">
-
-          <LogoCard index={ 3 } isActive={ this.state.activeLogo === 3 } onClick={ this.handleClick }>
-            <NodeJSLogo />
-          </LogoCard>
-
-          <LogoCard index={ 4 } isActive={ this.state.activeLogo === 4 } onClick={ this.handleClick }>
-            <WebpackLogo />
-          </LogoCard>
-
-          <LogoCard index={ 5 } isActive={ this.state.activeLogo === 5 } onClick={ this.handleClick }>
-            <ExpressLogo />
-          </LogoCard>
-
-          <LogoCard index={ 6 } isActive={ this.state.activeLogo === 6 } onClick={ this.handleClick }>
-            <GraphQlLogo />
-          </LogoCard>
-
-          <LogoCard index={ 7 } isActive={ this.state.activeLogo === 7 } onClick={ this.handleClick }>
-            <MongoDBLogo />
-          </LogoCard>
-
+          {
+            BackEnd.map((Logo, i) => {
+              const l = i + 3;
+              return (
+                <LogoCard
+                  key={ l } index={ l }
+                  isActive={ this.state.activeLogo === (l) }
+                  onClick={ this.handleClick }
+                >
+                  <Logo />
+                  {ipsumLorem}
+                </LogoCard>
+              )
+            })
+          }
         </div>
 
       </React.Fragment>

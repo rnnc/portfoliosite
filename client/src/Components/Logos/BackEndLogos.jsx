@@ -18,21 +18,22 @@ export class NodeJSLogo  extends PureComponent {
 
   animate = (inView) => (
     (inView)
-    ?
+      ?
       anime({
         targets: ".nodejsLogo_path",
-        strokeDashoffset: [anime.setDashoffset,0],
+        strokeDashoffset: [anime.setDashoffset, 0],
         easing: 'easeInOutSine',
         duration: 1000
       })
-    :
+      :
       anime({
         targets: ".nodejsLogo_path",
         strokeDashoffset: [0, anime.setDashoffset],
         easing: 'easeInOutSine',
         duration: 750
       })
-  )
+  );
+
   render(){
     return (
       <Observer threshold={0.5}>
@@ -133,6 +134,7 @@ export class GraphQlLogo  extends PureComponent {
         duration: 100
       })
   );
+  
   render() {
     return (
       <Observer threshold={ 0.75 } >
