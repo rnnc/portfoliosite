@@ -36,6 +36,15 @@
   transition-delay: 0.75s;
 }
 
+.graphqlLogo_circle {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.graphqlLogo_circle.visible {
+  opacity: 1;
+}
+
 .apolloLogo_A {
   opacity: 0;
   transition: all 0.5s;
@@ -53,15 +62,6 @@
 .nodejsLogo_S.visible {
   opacity: 1;
   transition: all 2.5s;
-}
-
-.graphqlLogo_circle {
-  opacity: 0;
-  transition: all 1s;
-}
-
-.graphqlLogo_circle.visible {
-  opacity: 1;
 }
 
 .svgLogos.mongodb {

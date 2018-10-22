@@ -2,7 +2,8 @@
   display: flex;
   padding: 1em;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-content: center;
 }
 
 .logoCard {
@@ -126,6 +127,7 @@
     width: 34em;
     margin-left: -38%;
     height: auto;
+    transition: all 0.5s;
   }
 }
 

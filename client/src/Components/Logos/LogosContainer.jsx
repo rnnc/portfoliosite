@@ -14,6 +14,8 @@ import {
   GraphQlLogo, MongoDBLogo
 } from './BackEndLogos';
 
+import { Descriptor } from '../Styled';
+
 const FrontEnd = [ReactLogo, ReduxLogo, ApolloLogo];
 const BackEnd = [WebpackLogo, NodeJSLogo, ExpressLogo, GraphQlLogo, MongoDBLogo];
 
@@ -36,12 +38,10 @@ export default class LogosContainer extends Component {
 
   render() {
 
-
-
     return (
-      <React.Fragment>
+      <div style={{background: "radial-gradient(circle, #2c4366, #263a5a, #20314e, #1a2842, #142037)"}}>
 
-        <h2 className="descriptor"> Front End Technologies </h2>
+        <Descriptor> Front End Technologies </Descriptor>
         <div className="logo_container frontend" >
           {
             FrontEnd.map((Logo, i) => (
@@ -51,32 +51,29 @@ export default class LogosContainer extends Component {
                 onClick={ this.handleClick }
               >
                 <Logo />
-                {ipsumLorem}
+                { ipsumLorem }
               </LogoCard>
             ))
           }
         </div>
 
-        <h2 className="descriptor"> Back End Technologies </h2>
+        <Descriptor> Back End Technologies </Descriptor>
         <div className="logo_container backend">
           {
-            BackEnd.map((Logo, i) => {
-              const l = i + 3;
-              return (
-                <LogoCard
-                  key={ l } index={ l }
-                  isActive={ this.state.activeLogo === (l) }
-                  onClick={ this.handleClick }
-                >
-                  <Logo />
-                  {ipsumLorem}
-                </LogoCard>
-              )
-            })
+            BackEnd.map((Logo, i) => (
+              <LogoCard
+                key={ (i + 3) } index={ (i + 3) }
+                isActive={ this.state.activeLogo === ((i + 3)) }
+                onClick={ this.handleClick }
+              >
+                <Logo />
+                { ipsumLorem }
+              </LogoCard>
+            ))
           }
         </div>
 
-      </React.Fragment>
+      </div>
     )
   }
 }
