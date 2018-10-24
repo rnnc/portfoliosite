@@ -1,0 +1,77 @@
+.svgLogos {
+  transition: all .7s;
+  resize: horizontal;
+  width: 16em;
+  padding: 10%;
+  position: relative;
+}
+
+.reactLogo_circle {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.reactLogo_circle.visible {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.reduxLogo_circle {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.reduxLogo_circle.visible {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.apolloLogo_circle {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.apolloLogo_circle.visible {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.graphqlLogo_circle {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.graphqlLogo_circle.visible {
+  opacity: 1;
+}
+
+.apolloLogo_A {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.apolloLogo_A.visible {
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+.nodejsLogo_S {
+  opacity: 0;
+}
+
+.nodejsLogo_S.visible {
+  opacity: 1;
+  transition: all 2.5s;
+}
+
+.svgLogos.mongodb {
+  width: 18em;
+  padding: 5em 0 5em 0;
+  filter: blur(20px);
+  transition: all 0.75s;
+}
+
+.svgLogos.mongodb.visible {
+  filter: blur(0);
+  transition: all 1.75s;
+}
