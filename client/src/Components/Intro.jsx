@@ -1,30 +1,55 @@
-import { TimelineMax, Power4 } from 'gsap';
+import { TweenMax, Elastic, Back } from 'gsap';
 import React, { Component } from 'react'
+import classnames from 'classnames';
 import Observer from 'react-intersection-observer';
-
-import TextSplitr from 'textsplitr';
 
 import { TopContent, BGScreen } from './Styled';
 
+import './CSS/Intro.css'
+
 export default class Intro extends Component {
 
-  animation() {
+  animation(inView) {
+    if (inView) {
+      setTimeout(() => {
+        TweenMax.fromTo('.consoleout', 1, { x: 1000 },
+          { x: 0, display: "inline-block", ease: Back.easeOut.config(1) });
+      }, 2000);
+
+      /*  setTimeout(() => {
+         TweenMax.fromTo('.consoleout>div', 2, { opacity: 0 }, { opacity: 1 });
+       }, 2500); */
+    } else
+      TweenMax.to('.consoleout', .25, { x: 1000, display: "none" })
   }
 
   render() {
     return (
       <TopContent>
         <BGScreen />
-        <Observer>
+        <Observer threshold="1">
           { ({ inView, ref }) => {
-            this.animation();
+
+            this.animation(inView);
+
             return (
               <div className="codewrapper" ref={ ref }>
+
                 <div className="background" />
-                <div className="text">
-                  { ">> node app.js" }
+
+                <div className="prompt" >
+                  { " >>" }
                 </div>
-                <span className="cursor">{ "|" }</span>
+
+                <div className={ classnames("text", { "typewriter": inView }) }>
+                  { " node app.js " }
+                </div>
+
+                <div className="consoleout">
+                  <div className={ classnames({ "visible": inView }) }> { ` { hello World } ` }</div>
+                  <div className={ classnames({ "visible": inView }) }> { " My name is Rohan " }</div>
+                </div>
+
               </div>
             )
           } }

@@ -1,9 +1,11 @@
 import React, {PureComponent} from 'react';
 import Observer from 'react-intersection-observer';
-import classnames from 'classnames';
 import anime from 'animejs';
+import classnames from 'classnames';
 
-import './Logos.css';
+import {TweenMax} from 'gsap/all';
+
+import '../CSS/Logos.css';
 
 export class NodeJSLogo  extends PureComponent {
 
@@ -36,11 +38,11 @@ export class NodeJSLogo  extends PureComponent {
 
   render(){
     return (
-      <Observer threshold={0.5}>
+      <Observer threshold={0.75}>
         {({inView, ref})=>{
         
           this.animate(inView);
-
+          
           return (
             <svg className="svgLogos nodejs" viewBox="0 0 36.8 40.8" ref={ref}>
               <path className={classnames("nodejsLogo_S",{"visible":inView})} 
@@ -84,10 +86,10 @@ export class WebpackLogo  extends PureComponent {
 export class ExpressLogo  extends PureComponent{
 
   textStyle = {
-    font: "5em helvetica neue,open sans,sans-serif",
+    font: "5em Roboto, sans-serif",
     textShadow: "2px 2px black",
     fontWeight: "100",
-    lineHeight: "3.2em",
+    lineHeight: "3em",
     color: "#969696",
   };
   
@@ -96,7 +98,7 @@ export class ExpressLogo  extends PureComponent{
       <Observer threshold={ 0.75 }>
         { ({ inView, ref }) => {
           return (
-            <span className="svgLogos expressjs" style={ this.textStyle } ref={ ref }>
+            <span className="" style={ this.textStyle } ref={ ref }>
               Express
           </span>
           )
@@ -131,13 +133,13 @@ export class GraphQlLogo  extends PureComponent {
         targets: ".graphqlLogo_path",
         strokeDashoffset: [0,anime.setDashoffset],
         easing: 'easeInOutSine',
-        duration: 100
+        duration: 250
       })
   );
   
   render() {
     return (
-      <Observer threshold={ 0.75 } >
+      <Observer threshold={ 0.8 } >
         { ({ inView, ref }) => {
       
           this.animate(inView);

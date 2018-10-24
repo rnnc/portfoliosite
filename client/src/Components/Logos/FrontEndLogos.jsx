@@ -3,7 +3,7 @@ import Observer from 'react-intersection-observer';
 import classnames from 'classnames';
 import anime from 'animejs';
 
-import './Logos.css';
+import '../CSS/Logos.css';
 
 export class ReactLogo extends PureComponent {
 
@@ -35,7 +35,7 @@ export class ReactLogo extends PureComponent {
 
    render(){
      return (
-       <Observer threshold={0.5}>
+       <Observer threshold={0.75}>
          {({inView, ref})=>{
          
            this.animate(inView);
@@ -86,7 +86,7 @@ export class ReduxLogo extends PureComponent{
 
   render() {
     return (
-      <Observer threshold={0.5}>
+      <Observer threshold={0.75}>
         {({inView, ref})=>{
   
           this.animate(inView);
@@ -146,7 +146,7 @@ export class ApolloLogo extends PureComponent{
 
   render(){
     return (
-      <Observer threshold={0.5}>
+      <Observer threshold={0.75}>
 
         {({inView, ref})=>{
         

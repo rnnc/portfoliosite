@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import topBgImage from '../images/bg_code.jpg';
 
@@ -9,6 +9,7 @@ export const TopContent = styled.div`
   display: inline-block;
   height: 105vh;
   width: 100vw;
+  z-index:-1;
 `;
 
 export const BGScreen = styled.div`
@@ -26,5 +27,15 @@ export const BGScreen = styled.div`
 export const Descriptor = styled.div`
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3em;
+  padding: 0 0 5% 0;
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-evenly;
+  align-content: center;
+
+  div{
+    background: white;
+    padding: 15px;
+  }
 `;
