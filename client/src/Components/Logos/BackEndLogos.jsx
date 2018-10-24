@@ -3,8 +3,6 @@ import Observer from 'react-intersection-observer';
 import anime from 'animejs';
 import classnames from 'classnames';
 
-import {TweenMax} from 'gsap/all';
-
 import '../CSS/Logos.css';
 
 export class NodeJSLogo  extends PureComponent {

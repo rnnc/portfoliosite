@@ -1,8 +1,7 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import topBgImage from '../images/bg_code.jpg';
 
-const cbTransition = `cubic-bezier(.2,1.08,.68,.96) 0.5s`;
 
 export const TopContent = styled.div`
   position: relative;

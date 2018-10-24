@@ -1,4 +1,4 @@
-import { TweenMax, Elastic, Back } from 'gsap';
+import { TweenMax, Back } from 'gsap';
 import React, { Component } from 'react'
 import classnames from 'classnames';
 import Observer from 'react-intersection-observer';
@@ -27,7 +27,7 @@ export default class Intro extends Component {
     return (
       <TopContent>
         <BGScreen />
-        <Observer threshold="1">
+        <Observer threshold="1" triggerOnce>
           { ({ inView, ref }) => {
 
             this.animation(inView);

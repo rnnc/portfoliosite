@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Observer from 'react-intersection-observer';
 
 import LogoCard from './LogoCard';
 
