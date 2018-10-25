@@ -1,0 +1,26 @@
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  background: transparent;
+}
+
+.CardContainer .descriptor {
+  background: #A3AF9E;
+  font-size: 3em;
+  text-align: center;
+  width: 75vw;
+  clip-path: polygon(0 0, 100% 0, 97% 100%, 0% 100%);
+  transition: all 1s;
+}
+
+.descriptor.enter {
+  transition: all 1s;
+  clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
+  animation: reveal 1s ease;
+  transform: translateX(-25%);
+}
+
+.CardContainer .content {
+  transition: all .5s;
+}
