@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames';
 import Observer from 'react-intersection-observer';
 
-import { TopContent, BGScreen } from './Styled';
+import { TopContent} from './Styled';
 
 import './CSS/Intro.css'
 
@@ -26,7 +26,6 @@ export default class Intro extends Component {
   render() {
     return (
       <TopContent>
-        <BGScreen />
         <Observer threshold="1" triggerOnce>
           { ({ inView, ref }) => {
 

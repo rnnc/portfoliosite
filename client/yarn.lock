@@ -7818,6 +7818,11 @@ react-is@^16.3.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.5.2.tgz#e2a7b7c3f5d48062eb769fcb123505eb928722e3"
   integrity sha512-hSl7E6l25GTjNEZATqZIuWOgSnpXb3kD0DVCujmg46K5zLxsbiKaaT6VO9slkSBDPZfYs30lwfJwbOFOnoEnKQ==
 
+react-parallax@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-2.0.1.tgz#22448e166eeb3206ee1a2bd90027d65b56a2a085"
+  integrity sha512-apzMLQzr2HhOn4TmekFoQjlDyK/MzBv6Vk2CpykUMC0u0lFKIzkuB8jMaDX5Pr088cWoD1SU7OIVDsMG1GhSDw==
+
 react-sticky@^6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/react-sticky/-/react-sticky-6.0.3.tgz#7a18b643e1863da113d7f7036118d2a75d9ecde4"

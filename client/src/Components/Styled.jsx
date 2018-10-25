@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import topBgImage from '../images/bg_code.jpg';
-
+import bgImage1 from '../images/bg_code.jpg';
+import bgImage2 from '../images/bg_code2.jpg';
 
 export const TopContent = styled.div`
   position: relative;
   display: inline-block;
-  height: 105vh;
+  height: 100vh;
   width: 100vw;
   z-index:-1;
 `;
@@ -15,7 +15,8 @@ export const BGScreen = styled.div`
   position: absolute;
   height: 105vh;
   width: 100vw;
-  background-image: url(${topBgImage});
+  background-image: url(${bgImage1});
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

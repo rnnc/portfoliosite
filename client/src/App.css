@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=K2D:500,700');
 
 html {
   box-sizing: border-box;
@@ -21,7 +22,6 @@ html {
 }
 
 body {
-  background: radial-gradient(circle, rgba(4, 57, 59, 1) 0%, rgba(3, 36, 37, 0.9556197478991597) 37%, rgba(0, 0, 0, 1) 100%);
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   padding: 0;
   margin: 0;
