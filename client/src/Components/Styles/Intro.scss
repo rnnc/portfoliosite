@@ -25,9 +25,13 @@ $bgImage: url('../../images/bg_code.jpg');
     background-size: cover;
     background-repeat: round;
     background-position: center center;
-    filter: blur(12px) grayscale(80%);
-    transform: scale(1.1);
+    filter: blur(8px) grayscale(50%);
     z-index: 0;
+    &.visible{
+      transition: all 2s;
+      filter: blur(12.5px) grayscale(100%);
+      transform: scale(1.01);
+    }
   }
   .text {
     color: rgb(23, 116, 23);
@@ -49,7 +53,7 @@ $bgImage: url('../../images/bg_code.jpg');
   }
   .consoleout {
     color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     background: #1E1E1E;
     border: 2.5px solid rgb(40, 61, 40);
     box-shadow: 12px 5px 20px 1px rgba(16, 20, 18, 0.678);
@@ -60,17 +64,17 @@ $bgImage: url('../../images/bg_code.jpg');
     bottom: 12em;
     right: 10em;
     transform: translate(150%, 0);
+    transition: all 1s;
     &.entered {
       transition: all 1s;
       transition-delay: 1.75s;
       transform: translate(0,0);
     }
     >div {
-      font-family: 'Source Sans Pro', sans-serif;
-      font-weight: bold;
-      font-size: 3em;
+      font-family: 'Roboto Mono', sans-serif;
+      font-weight: 400;
+      font-size: 2.5em;
       white-space: nowrap;
-      letter-spacing: 2px;
     }
     >div:nth-child(2) {
       text-align: right;

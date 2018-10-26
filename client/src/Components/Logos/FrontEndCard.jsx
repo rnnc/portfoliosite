@@ -9,7 +9,7 @@ export default class FrontEndCard extends Component {
   render() {
 
     return (
-      <Observer threshold={ 0.1 }>
+      <Observer threshold={ 0.2 }>
         { ({ inView, ref }) => {
           return (
             <div className="CardContainer" ref={ ref }>
