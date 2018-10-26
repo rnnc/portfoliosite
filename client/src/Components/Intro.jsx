@@ -1,59 +1,61 @@
-import { TweenMax, Back } from 'gsap';
 import React, { Component } from 'react'
 import classnames from 'classnames';
 import Observer from 'react-intersection-observer';
 
-import { TopContent} from './Styled';
-
-import './CSS/Intro.css'
+import './Styles/Intro.scss'
 
 export default class Intro extends Component {
 
-  animation(inView) {
-    if (inView) {
-      setTimeout(() => {
-        TweenMax.fromTo('.consoleout', 1, { x: 1000 },
-          { x: 0, display: "inline-block", ease: Back.easeOut.config(1) });
-      }, 2000);
+  state = {
+    commands: [
+      "npm run",
+      "node app.js",
+      "yarn start"
+    ]
+  }
 
-      /*  setTimeout(() => {
-         TweenMax.fromTo('.consoleout>div', 2, { opacity: 0 }, { opacity: 1 });
-       }, 2500); */
-    } else
-      TweenMax.to('.consoleout', .25, { x: 1000, display: "none" })
+  getCommand() {
+    const rand = Math.floor(Math.random() * 3);
+    return this.state.commands[rand];
   }
 
   render() {
     return (
-      <TopContent>
-        <Observer threshold="1" triggerOnce>
-          { ({ inView, ref }) => {
+      <Observer threshold={ 0.5 }>
+        { ({ inView, ref }) => {
 
-            this.animation(inView);
+          return (
+            <div ref={ ref }
+              className={ classnames("introWrapper", { "visible": inView }) }
+            >
 
-            return (
-              <div className="codewrapper" ref={ ref }>
+              <div className="codewrapper">
 
                 <div className="background" />
 
                 <div className="prompt" >
-                  { " >>" }
+                  { " $ " }
                 </div>
 
                 <div className={ classnames("text", { "typewriter": inView }) }>
-                  { " node app.js " }
+                  { this.getCommand() }
                 </div>
 
-                <div className="consoleout">
-                  <div className={ classnames({ "visible": inView }) }> { ` { hello World } ` }</div>
-                  <div className={ classnames({ "visible": inView }) }> { " My name is Rohan " }</div>
+                <div className={ classnames("consoleout", { "entered": inView }) }>
+                  <div className={ classnames({ "visible": inView }) }>
+                    { ` { hello World } ` }
+                  </div>
+                  <div className={ classnames({ "visible": inView }) }>
+                    { " my name is Rohan " }
+                  </div>
                 </div>
 
               </div>
-            )
-          } }
-        </Observer>
-      </TopContent>
+
+            </div>
+          )
+        } }
+      </Observer>
     )
   }
 }

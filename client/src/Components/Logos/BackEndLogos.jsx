@@ -3,7 +3,7 @@ import Observer from 'react-intersection-observer';
 import anime from 'animejs';
 import classnames from 'classnames';
 
-import '../CSS/Logos.css';
+import '../Styles/Logos.scss';
 
 export class NodeJSLogo  extends PureComponent {
 

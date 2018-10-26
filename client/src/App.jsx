@@ -4,8 +4,7 @@ import Intro from './Components/Intro';
 import LogosContainer from './Components/Logos/LogosContainer';
 
 import FrontEnd from './Components/Logos/FrontEndCard';
-import { BGScreen } from './Components/Styled';
-import './App.css';
+import './App.scss';
 
 export default class App extends Component {
 
@@ -13,8 +12,6 @@ export default class App extends Component {
     return (
 
       <React.Fragment>
-
-        <BGScreen />
 
         <Intro />
 

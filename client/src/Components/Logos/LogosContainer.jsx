@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import LogoCard from './LogoCard';
 
-import '../CSS/LogoContainer.css';
+import '../Styles/LogoContainer.css';
 
 import {
   ReactLogo, ReduxLogo,
