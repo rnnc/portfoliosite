@@ -2,8 +2,6 @@ $bgImage: url('../../images/bg_code.jpg');
 @mixin common {
   font-family: "Ubuntu Mono";
   font-size: 2em;
-  top: 5vh;
-  left: 4vw;
   position: relative;
 }
 
@@ -12,10 +10,6 @@ $bgImage: url('../../images/bg_code.jpg');
   height: 100vh;
   width: 100vw;
   background: rgb(14, 14, 14);
-}
-
-.codewrapper {
-  display: inline-flex;
   .background {
     position: absolute;
     height: 100vh;
@@ -27,12 +21,17 @@ $bgImage: url('../../images/bg_code.jpg');
     background-position: center center;
     filter: blur(8px) grayscale(50%);
     z-index: 0;
-    &.visible{
+    &.visible {
       transition: all 2s;
       filter: blur(12.5px) grayscale(100%);
-      transform: scale(1.01);
+      transform: scale(1.02);
     }
   }
+}
+
+.codewrapper {
+  display: inline-flex;
+  padding: 3% 0 0 3%;
   .text {
     color: rgb(23, 116, 23);
     @include common();
@@ -68,7 +67,7 @@ $bgImage: url('../../images/bg_code.jpg');
     &.entered {
       transition: all 1s;
       transition-delay: 1.75s;
-      transform: translate(0,0);
+      transform: translate(0, 0);
     }
     >div {
       font-family: 'Roboto Mono', sans-serif;

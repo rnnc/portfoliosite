@@ -11,20 +11,21 @@ export default class FrontEndCard extends Component {
     return (
       <Observer threshold={ 0.2 }>
         { ({ inView, ref }) => {
+          const entered = inView ? "enter" : "";
           return (
             <div className="CardContainer" ref={ ref }>
 
-              <div className={ classnames("background", { "enter": inView }) } />
+              <div className={ `background ${entered}` } />
 
-              <div className={ classnames("descriptor", { "enter": inView }) }>
-                <div className="title">
+              <div className={ `descriptor ${entered}` }>
+                <div className={ `title ${entered}` }>
                   { "Front End" }
                 </div>
-                <div className="blurb">
+                <div className={ `blurb ${entered}` }>
                   { " Ipsem Lorem " }
                 </div>
               </div>
-              <div className={ classnames("content", { "enter": inView }) }>
+              <div className={ `content ${entered}` }>
 
               </div>
             </div>)

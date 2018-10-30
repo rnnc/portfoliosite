@@ -29,9 +29,9 @@ export default class Intro extends Component {
               className={ classnames("introWrapper", { "visible": inView }) }
             >
 
-              <div className="codewrapper">
+              <div className={ classnames("background", { "visible": inView }) } />
 
-                <div className={ classnames("background", { "visible": inView }) } />
+              <div className="codewrapper">
 
                 <div className="prompt" >
                   { " $ " }
