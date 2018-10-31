@@ -18,17 +18,27 @@ export default class FrontEndCard extends Component {
               <div className={ `background ${entered}` } />
 
               <div className={ `descriptor ${entered}` }>
-                <div className={ `title ${entered}` }>
-                  { "Front End" }
+
+                <div className={ `titleContainer ${entered}` }>
+                  <div className="title">
+                    { "Front End" }
+                  </div>
                 </div>
-                <div className={ `blurb ${entered}` }>
-                  { " Ipsem Lorem " }
+
+                <div className={ `blurbContainer ${entered}` }>
+                  <div className="blurb">
+                    { " Ipsem Lorem " }
+                  </div>
                 </div>
+
               </div>
+
               <div className={ `content ${entered}` }>
 
               </div>
-            </div>)
+
+            </div>
+          );
         } }
       </Observer>
     )

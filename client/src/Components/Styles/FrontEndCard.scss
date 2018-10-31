@@ -23,42 +23,47 @@ $bgImage: url('../../images/bg_code2.jpg');
     }
   }
   .descriptor {
-    background-image: linear-gradient(to bottom, #727787, #646a7b, #565c70, #495064, #3c4359);
-    /* transition: all 1s; */
+    background-image: linear-gradient(to bottom, #727787, #5f6474, #4c5261, #3a414f, #29303d);
+    transition: all 1s;
     display: flex;
     flex-wrap: wrap;
-    opacity: 0;
+    opacity: 0.5;
+    flex: 1;
     &.enter {
-      flex: 1;
-      transition: all 1s;
+      transition: all 1.5s;
       opacity: 1;
     }
-    .title {
-      font-family: 'Montserrat', sans-serif;
-      text-transform: uppercase;
-      font-size: 3.5em;
-      font-weight: 700;
-      text-align: center;
-      flex-grow: 1;
-      text-align: center;
-      position: relative;
-      transform: translateY(35%);
+    .titleContainer {
+      flex: 1;
       opacity: 0;
+      padding: 2%;
+      .title {
+        position: relative;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 3.5em;
+        font-weight: 700;
+        text-align: center;
+      }
       &.enter {
         transition: opacity 1s;
         opacity: 1;
       }
     }
-    .blurb {
-      flex-grow: 1;
-      flex-basis: 500px;
+    .blurbContainer {
+      flex: 2;
+      font-family: 'Lato', sans-serif;
+      text-align: center;
+      .blurb {
+        padding: 5%;
+      }
     }
   }
   .content {
     transition: all 1s;
+    flex: 2;
     &.enter {
       transition: all 2s;
-      flex: 1.5;
     }
   }
 }
