@@ -22,7 +22,8 @@ $bgImage: url('../../images/bg_code.jpg');
     filter: blur(8px) grayscale(50%);
     z-index: 0;
     &.visible {
-      transition: all 2s;
+      transition: filter 2s;
+      transition: transform 1.2s;
       filter: blur(12.5px) grayscale(100%);
       transform: scale(1.02);
     }
