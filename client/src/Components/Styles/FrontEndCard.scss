@@ -6,8 +6,8 @@ $bgImage: url('../../images/bg_code2.jpg');
 .CardContainer {
   scroll-snap-align: start;
   display: flex;
-  flex-flow: column wrap;
-  height: auto;
+  flex-flow: column;
+  height: 105vh;
   background: rgb(14, 14, 14);
   clip-path: polygon(100% 0, 100% 100%, 0% 100%, 0 0);
   .background {
@@ -143,7 +143,7 @@ $bgImage: url('../../images/bg_code2.jpg');
     flex: 2;
     &.enter {
       transition: flex 2s;
-      flex: 4;
+      flex: 3;
     }
   }
 }

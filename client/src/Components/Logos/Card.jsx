@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Observer from 'react-intersection-observer';
 
 export default class Card extends Component {
 

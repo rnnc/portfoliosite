@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import Observer from 'react-intersection-observer';
 import anime from 'animejs';
-import classnames from 'classnames';
 
 import '../Styles/Logos.scss';
 
@@ -96,9 +95,9 @@ export class ExpressLogo  extends PureComponent{
       <Observer threshold={ 0.75 }>
         { ({ inView, ref }) => {
           return (
-            <span className="" style={ this.textStyle } ref={ ref }>
+            <span className="logo expressjs" style={ this.textStyle } ref={ ref }>
               Express
-          </span>
+            </span>
           )
         } }
       </Observer>

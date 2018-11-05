@@ -12,20 +12,23 @@
     text-align: center;
     position: relative;
     .inner {
-      width: 100%;
+      width: auto;
       position: relative;
       transition: all 0.5s;
-      height: auto;
+      height: 85%;
       box-shadow: 0 7px 15px 2px rgba(10, 10, 10, 0.295);
       &.selected {
-        box-shadow: 25px 25px 50px 2px rgba(0, 0, 0, 0.2);
-        background: rgba(26, 92, 236, 0.233);
-        transform: scale(1.02);
+        box-shadow: 0 0 40px 5px rgba(40, 102, 66, 0.418);
+        background: rgba(72, 218, 206, 0.308);
+        border-radius: 2%;
+        transform: scale(1.04);
         display: block;
+        &:hover {
+          box-shadow: 0 0 40px 12px rgba(40, 102, 66, 0.418);
+        }
       }
       &:hover {
-        /* box-shadow: 0 0 20px 5px rgba(43, 64, 92, 0.651); */
-        box-shadow: 0 0 40px 5px rgba(40, 102, 66, 0.418);
+        box-shadow: 0 0 30px 5px rgba(14, 13, 13, 0.685);
         transition: all 0.75s;
         cursor: pointer;
         /* transform: scale(1.02); */
@@ -36,16 +39,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 0;
-      margin-top: 2em;
+      height: auto;
+      /* margin-top: 2em; */
       background: rgba(143, 67, 67, 0.267);
       transition: all 0.5s;
       opacity: 0;
       &.selected {
         transition: all 0.5s 0.25s;
-        height: 10em;
         overflow: visible;
-        padding: 2em;
+        /* padding: 2em; */
         opacity: 1;
         margin-left: -2%;
       }

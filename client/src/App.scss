@@ -34,5 +34,8 @@ body {
 }
 
 .app {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
+  >div {
+    scroll-snap-align: center;
+  }
 }
