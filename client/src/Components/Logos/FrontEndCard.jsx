@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
-import classnames from 'classnames';
 import Observer from 'react-intersection-observer';
 
+import { ReactLogo, ReduxLogo, ApolloLogo } from './FrontEndLogos';
+import CardContainer from './CardContainer';
+
 import '../Styles/FrontEndCard.scss';
+import '../Styles/Cards.scss';
 
 export default class FrontEndCard extends Component {
 
   render() {
 
+    const FrontEnd = [ReactLogo, ReduxLogo, ApolloLogo];
+
+    const blurbDescription =
+      `Make responsive front end `;
+
     return (
-      <Observer threshold={ 0.2 }>
+      <Observer threshold={ 0.3 }>
         { ({ inView, ref }) => {
           const entered = inView ? "enter" : "";
           return (
@@ -19,22 +27,32 @@ export default class FrontEndCard extends Component {
 
               <div className={ `descriptor ${entered}` }>
 
-                <div className={ `titleContainer ${entered}` }>
+                <div className="titleContainer">
                   <div className="title">
-                    { "Front End" }
+                    <div className={ `animationContainer ${entered}` }>
+                      <div className="animationText">
+                        { "Front End" }
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className={ `blurbContainer ${entered}` }>
+                <div className="blurbContainer">
                   <div className="blurb">
-                    { " Ipsem Lorem " }
+                    <div className={ `animationContainer ${entered}` }>
+                      <div className="animationText">
+                        { blurbDescription }
+                      </div>
+                    </div>
                   </div>
                 </div>
 
               </div>
 
               <div className={ `content ${entered}` }>
-
+                <CardContainer>
+                  { FrontEnd }
+                </CardContainer>
               </div>
 
             </div>

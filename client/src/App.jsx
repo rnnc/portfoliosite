@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 
 import Intro from './Components/Intro';
-import LogosContainer from './Components/Logos/LogosContainer';
-
 import FrontEnd from './Components/Logos/FrontEndCard';
+
 import './App.scss';
 
 export default class App extends Component {
 
   render() {
     return (
-
-      <React.Fragment>
+      <div className="app">
 
         <Intro />
 
         <FrontEnd />
-
-        <LogosContainer />
-
-      </React.Fragment>
-
+    
+      </div>
     )
   }
 }

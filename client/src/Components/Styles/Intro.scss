@@ -6,8 +6,9 @@ $bgImage: url('../../images/bg_code.jpg');
 }
 
 .introWrapper {
+  scroll-snap-align: start;
   display: inline-block;
-  height: 100vh;
+  height: 101vh;
   width: 100vw;
   background: rgb(14, 14, 14);
   .background {
@@ -22,8 +23,7 @@ $bgImage: url('../../images/bg_code.jpg');
     filter: blur(8px) grayscale(50%);
     z-index: 0;
     &.visible {
-      transition: filter 2s;
-      transition: transform 1.2s;
+      transition: filter 2s, transform 1.5s;
       filter: blur(12.5px) grayscale(100%);
       transform: scale(1.02);
     }
