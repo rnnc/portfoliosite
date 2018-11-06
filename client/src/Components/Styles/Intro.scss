@@ -63,10 +63,13 @@ $bgImage: url('../../images/bg_code.jpg');
     bottom: 12em;
     right: 10em;
     transform: translate(150%, 0);
-    transition: all 1s;
+    transition: transform 0.5s;
+    &:hover {
+      box-shadow: 0px 0px 50px 15px rgba(21, 85, 53, 0.171);
+      transition: all 0.75s;
+    }
     &.entered {
-      transition: all 1s;
-      transition-delay: 1.75s;
+      transition: transform 0.75s ease-out 1.5s, box-shadow 0.5s;
       transform: translate(0, 0);
     }
     >div {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Intro from './Components/Intro';
-import FrontEnd from './Components/Logos/FrontEndCard';
+import FrontEnd from './Components/FrontEnd';
 
 import './App.scss';
 

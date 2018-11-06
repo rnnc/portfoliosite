@@ -1,5 +1,7 @@
-$bgImage: url('../../images/bg_code2.jpg');
+$bgImage_front: url('../../images/bg_code2.jpg');
+$bgImage_back: url('../../images//bg_sparks.jpg');
 .masterContainer {
+  overflow-y: hidden;
   display: flex;
   flex-flow: column;
   height: 100vh;
@@ -9,7 +11,7 @@ $bgImage: url('../../images/bg_code2.jpg');
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background-image: $bgImage;
+    background-image: $bgImage_front;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: round;
@@ -34,6 +36,7 @@ $bgImage: url('../../images/bg_code2.jpg');
       opacity: 1;
     }
     .titleContainer {
+      order: 0;
       flex: 1 1 400px;
       min-width: 35%;
       padding: 2%;
@@ -137,7 +140,7 @@ $bgImage: url('../../images/bg_code2.jpg');
     flex: 2;
     &.enter {
       transition: flex 2s;
-      flex: 3;
+      flex: 2;
     }
   }
 }

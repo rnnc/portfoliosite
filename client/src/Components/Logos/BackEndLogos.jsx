@@ -1,53 +1,37 @@
 import React, {PureComponent} from 'react';
 import Observer from 'react-intersection-observer';
-import anime from 'animejs';
 
 import '../Styles/Logos.scss';
 
+import { pathAnimate } from '../Animations';
+
 export class NodeJSLogo  extends PureComponent {
 
-  nodegreen = "#83CD29"
+  node_color = "#83CD29"
 
   pathStyle = {
     fill: "none",
-    stroke: this.nodegreen,
+    stroke: this.node_color,
     strokeWidth: 2.5,
     strokeMiterlimit: 10
   };
-
-  animate = (inView) => (
-    (inView)
-      ?
-      anime({
-        targets: ".nodejsLogo_path",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutSine',
-        duration: 1000
-      })
-      :
-      anime({
-        targets: ".nodejsLogo_path",
-        strokeDashoffset: [0, anime.setDashoffset],
-        easing: 'easeInOutSine',
-        duration: 750
-      })
-  );
 
   render(){
     return (
       <Observer threshold={0.75}>
         {({inView, ref})=>{
         
-          this.animate(inView);
-          
+          pathAnimate(inView,".svgLogos.nodejs .path",{in:1000})
+          const visible = inView ?'visible':'';
+
           return (
             <svg className="svgLogos nodejs" viewBox="0 0 36.8 40.8" ref={ref}>
-              <path className={classnames("nodejsLogo_S",{"visible":inView})} 
-              fill={this.nodegreen} d="M23,28.8c-6.4,0-7.8-3-7.8-5.4c0-0.2,0.2-0.4,0.4-0.4h1.9c0.2,0,0.4,0.2,0.4,0.4c0.3,1.9,1.1,2.9,5,2.9
+              <path className={`letter_S ${visible}`} 
+              fill={this.node_color} d="M23,28.8c-6.4,0-7.8-3-7.8-5.4c0-0.2,0.2-0.4,0.4-0.4h1.9c0.2,0,0.4,0.2,0.4,0.4c0.3,1.9,1.1,2.9,5,2.9
               	c3.1,0,4.4-0.7,4.4-2.3c0-0.9-0.4-1.7-5.2-2.1c-4-0.4-6.5-1.3-6.5-4.5c0-3,2.5-4.7,6.7-4.7c4.7,0,7,1.6,7.3,5.1c0,0.1,0,0.2-0.1,0.3
               	c-0.1,0.1-0.2,0.1-0.3,0.1h-1.9c-0.2,0-0.4-0.1-0.4-0.3c-0.5-2-1.6-2.7-4.6-2.7c-3.4,0-3.8,1.2-3.8,2.1c0,1.1,0.5,1.4,5,2
               	c4.5,0.6,6.7,1.4,6.7,4.6C30.3,27,27.7,28.8,23,28.8"/>
-              <path className="nodejsLogo_path" style={this.pathStyle} d="M13,36.1c0,0,3.4,2.3,4.6,3c1,0.5,2.4-0.3,2.4-0.3s13.3-7.4,14.2-8.4c0.5-0.5,0.7-1.7,0.7-1.7s0-15.7,0-16.8
+              <path className="path" style={this.pathStyle} d="M13,36.1c0,0,3.4,2.3,4.6,3c1,0.5,2.4-0.3,2.4-0.3s13.3-7.4,14.2-8.4c0.5-0.5,0.7-1.7,0.7-1.7s0-15.7,0-16.8
               	c0-1.1-1.1-1.7-1.1-1.7S21.3,2.8,19.8,2c-1.3-0.8-2.4,0-2.4,0S3.9,9.5,2.8,10.2C1.9,10.9,2,12.1,2,12.1S1.9,27.8,1.9,28.9
               	c0,1.3,1.4,1.9,1.4,1.9s4.2,2.7,6,2.7c1.4,0,1.8-0.3,2.3-0.6c0.9-0.7,0.9-2,0.9-2l0.1-18"/>
             </svg>
@@ -96,7 +80,7 @@ export class ExpressLogo  extends PureComponent{
         { ({ inView, ref }) => {
           return (
             <span className="logo expressjs" style={ this.textStyle } ref={ ref }>
-              Express
+              {"Express"}
             </span>
           )
         } }
@@ -107,60 +91,41 @@ export class ExpressLogo  extends PureComponent{
 
 export class GraphQlLogo  extends PureComponent {
 
-  graphqlColor = "#E535AB"
+  graphql_color = "#E535AB"
 
   pathStyle = {
     fill: "none",
-    stroke: this.graphqlColor,
+    stroke: this.graphql_color,
     strokeWidth: 17,
     strokeMiterlimit: 10
   };
   
-  animate = (inView)=> (
-    (inView)
-    ? 
-      anime({
-        targets: ".graphqlLogo_path",
-        strokeDashoffset: [anime.setDashoffset,0],
-        easing: 'easeInOutSine',
-        duration: 750
-      })
-    : 
-      anime({
-        targets: ".graphqlLogo_path",
-        strokeDashoffset: [0,anime.setDashoffset],
-        easing: 'easeInOutSine',
-        duration: 250
-      })
-  );
   
   render() {
     return (
       <Observer threshold={ 0.8 } >
         { ({ inView, ref }) => {
       
-          this.animate(inView);
-
-          const circleClassname = classnames("graphqlLogo_circle", { "visible": inView });
-          const lineClassname = "graphqlLogo_path";
+          pathAnimate(inView, ".svgLogos.graphql .path")
+          const circleClass = `circle ${inView?'visible':''}`;
         
           return (
-            <svg className="svgLogos" viewBox="0 0 400 400" ref={ ref }>
-              <line className={ lineClassname } style={ this.pathStyle } x1="60.8" y1="280.5" x2="60.8" y2="119.6" />
-              <line className={ lineClassname } style={ this.pathStyle } x1="60.8" y1="119.6" x2="200" y2="39.1" />
-              <line className={ lineClassname } style={ this.pathStyle } x1="200" y1="39.1" x2="339.4" y2="119.6" />
-              <line className={ lineClassname } style={ this.pathStyle } x1="339.4" y1="119.6" x2="339.2" y2="280.2" />
-              <line className={ lineClassname } style={ this.pathStyle } x1="339.2" y1="280.2" x2="60.8" y2="280.5" />
-              <line className={ lineClassname } style={ this.pathStyle } x1="60.8" y1="280.5" x2="200" y2="360.9" />
-              <line className={ lineClassname } style={ this.pathStyle } x1="200" y1="360.9" x2="339.2" y2="280.5" />
-              <line className={ lineClassname } style={ this.pathStyle } x1="60.8" y1="280.5" x2="200" y2="39.1" />
-              <line className={ lineClassname } style={ this.pathStyle } x1="339.2" y1="280.5" x2="200" y2="39.1" />
-              <circle className={ circleClassname } fill={ this.graphqlColor } cx="60.9" cy="120.1" r="35.4" />
-              <circle className={ circleClassname } fill={ this.graphqlColor } cx="200" cy="39.1" r="35.4" />
-              <circle className={ circleClassname } fill={ this.graphqlColor } cx="339.4" cy="119.6" r="35.4" />
-              <circle className={ circleClassname } fill={ this.graphqlColor } cx="200" cy="360.9" r="35.4" />
-              <circle className={ circleClassname } fill={ this.graphqlColor } cx="60.7" cy="280.5" r="35.4" />
-              <circle className={ circleClassname } fill={ this.graphqlColor } cx="339.4" cy="280.2" r="35.4" />
+            <svg className="svgLogos graphql" viewBox="0 0 400 400" ref={ ref }>
+              <line className="path" style={ this.pathStyle } x1="60.8" y1="280.5" x2="60.8" y2="119.6" />
+              <line className="path" style={ this.pathStyle } x1="60.8" y1="119.6" x2="200" y2="39.1" />
+              <line className="path" style={ this.pathStyle } x1="200" y1="39.1" x2="339.4" y2="119.6" />
+              <line className="path" style={ this.pathStyle } x1="339.4" y1="119.6" x2="339.2" y2="280.2" />
+              <line className="path" style={ this.pathStyle } x1="339.2" y1="280.2" x2="60.8" y2="280.5" />
+              <line className="path" style={ this.pathStyle } x1="60.8" y1="280.5" x2="200" y2="360.9" />
+              <line className="path" style={ this.pathStyle } x1="200" y1="360.9" x2="339.2" y2="280.5" />
+              <line className="path" style={ this.pathStyle } x1="60.8" y1="280.5" x2="200" y2="39.1" />
+              <line className="path" style={ this.pathStyle } x1="339.2" y1="280.5" x2="200" y2="39.1" />
+              <circle className={ circleClass } fill={ this.graphql_color } cx="60.9" cy="120.1" r="35.4" />
+              <circle className={ circleClass } fill={ this.graphql_color } cx="200" cy="39.1" r="35.4" />
+              <circle className={ circleClass } fill={ this.graphql_color } cx="339.4" cy="119.6" r="35.4" />
+              <circle className={ circleClass } fill={ this.graphql_color } cx="200" cy="360.9" r="35.4" />
+              <circle className={ circleClass } fill={ this.graphql_color } cx="60.7" cy="280.5" r="35.4" />
+              <circle className={ circleClass } fill={ this.graphql_color } cx="339.4" cy="280.2" r="35.4" />
             </svg>
           );
         } }
@@ -175,7 +140,7 @@ export class MongoDBLogo extends PureComponent {
       <Observer  threshold={0.75}>
         {({inView, ref})=>{
           return (
-            <svg className={classnames("svgLogos mongodb",{"visible":inView})} viewBox="0 0 512 146" ref={ref}>
+            <svg className={`svgLogos mongodb ${inView?'visible':''}`} viewBox="0 0 512 146" ref={ref}>
               <path fill="#8E714E" d="M466.2,62c-0.4,0.1-0.9,1-0.9,1.6c-0.1,3.5-0.2,12.7-0.2,19c0,0.2,0.3,0.5,0.5,0.5c1.3,0.1,4.4,0.2,7.1,0.2
                 c3.7,0,5.9-0.5,7.1-1c3.1-1.6,4.6-5,4.6-8.7c0-8.4-5.9-11.7-14.7-11.7C469.2,61.7,467.5,61.7,466.2,62L466.2,62L466.2,62z
                  M488.6,100.9c0-8.6-6.3-13.4-17.8-13.4c-0.5,0-4.2-0.1-5,0.1c-0.3,0.1-0.6,0.3-0.6,0.5c0,6.2-0.1,16,0.2,19.8

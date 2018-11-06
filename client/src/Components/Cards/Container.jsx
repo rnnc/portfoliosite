@@ -21,7 +21,7 @@ export default class CardContainer extends Component {
   render() {
     return (
       <div>
-        <div className="cardContainer frontend">
+        <div className={`cardContainer ${this.props.cardsType}`}>
           {
             this.LogoArray.map((Logo, i) =>
               <Card

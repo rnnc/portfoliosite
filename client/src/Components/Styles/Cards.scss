@@ -11,12 +11,20 @@
     transition: all 0.25s;
     text-align: center;
     position: relative;
+    padding: 0.5em;
+    /* margin-top: 1em;
+    &.selected{
+      margin-top: 1em;
+      top: 1em;
+    } */
     .inner {
       width: auto;
       position: relative;
       transition: all 0.5s;
       height: 85%;
+      background: rgba(36, 36, 36, 0.219);
       box-shadow: 0 7px 15px 2px rgba(10, 10, 10, 0.295);
+      transition: all 0.75s;
       &.selected {
         box-shadow: 0 0 40px 5px rgba(40, 102, 66, 0.418);
         background: rgba(72, 218, 206, 0.308);
@@ -24,32 +32,33 @@
         transform: scale(1.04);
         display: block;
         &:hover {
-          box-shadow: 0 0 40px 12px rgba(40, 102, 66, 0.418);
+          box-shadow: 0 0 50px 15px rgba(40, 102, 66, 0.418);
+          transition: all 0.5s;
         }
       }
       &:hover {
         box-shadow: 0 0 30px 5px rgba(14, 13, 13, 0.685);
-        transition: all 0.75s;
         cursor: pointer;
-        /* transform: scale(1.02); */
       }
     }
     .info {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-      /* margin-top: 2em; */
+      /* display: flex; 
+       justify-content: center; 
+       align-items: center; 
+       height: auto; */
       background: rgba(143, 67, 67, 0.267);
       transition: all 0.5s;
       opacity: 0;
+      top: 0;
       &.selected {
-        transition: all 0.5s 0.25s;
         overflow: visible;
-        /* padding: 2em; */
         opacity: 1;
-        margin-left: -2%;
+        top: 2em;
+        /* padding: 2em; 
+         margin-top: 4em; 
+         margin-left: -2%; */
+        transition: all 0.5s 0.25s;
       }
       .textContent {
         opacity: 0;
@@ -87,7 +96,7 @@ $q_smaller: 500px;
   .card.selected:nth-last-child(1) .info.selected {
     margin-left: -223%;
   }
-  .logo_container.backend .card.selected:nth-of-type(3) .info.selected {
+  .cardContainer.backend .card.selected:nth-of-type(3) .info.selected {
     margin-left: -113%;
   }
 }
@@ -102,10 +111,10 @@ $q_smaller: 500px;
   .card.selected:nth-of-type(3n+2) .info.selected {
     margin-left: -113%;
   }
-  .logo_container.backend .card.selected:nth-of-type(3n+4) .info.selected {
+  .cardContainer.backend .card.selected:nth-of-type(3n+4) .info.selected {
     margin-left: -56%;
   }
-  .logo_container.backend .card.selected:nth-of-type(3n+5) .info.selected {
+  .cardContainer.backend .card.selected:nth-of-type(3n+5) .info.selected {
     margin-left: -166%;
   }
 }

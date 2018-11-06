@@ -7,42 +7,63 @@
 }
 
 .svgLogos {
-  width: 100%;
+  width: 99.5%;
   padding: 10%;
   position: relative;
-  &.react {
-    .circle {
-      @include opacityToggle()
+  &.html {
+    /* width: 99%; */
+    bottom: 4%;
+  }
+  &.css {
+    width: 90%;
+    bottom: 4%;
+  }
+  &.sass {
+    $sassColor: #CD6799;
+    top: 5%;
+    width: 105%;
+    .path {
+      fill: transparent;
+      stroke-width: 2.5;
+      stroke: $sassColor;
+      &.visible {
+        fill: $sassColor;
+        transition: fill 1s 1.5s, stroke 0.25s 3s;
+        stroke: transparent;
+      }
     }
   }
-  &.apollo {
-    position: relative;
-    bottom: 4%;
+  &.react {
     .circle {
-      @include opacityToggle()
-    }
-    .letter_A {
-      @include opacityToggle()
+      @include opacityToggle();
     }
   }
   &.redux {
+    bottom: 3%;
     .circle {
-      @include opacityToggle()
+      @include opacityToggle();
     }
   }
-  .nodejs {
+  &.apollo {
+    bottom: 5%;
+    .circle {
+      @include opacityToggle();
+    }
+    .letter_A {
+      @include opacityToggle();
+    }
+  }
+  &.nodejs {
     .letter_S {
-      @include opacityToggle(2.5s, 0s);
+      @include opacityToggle(2.5s, 0);
     }
   }
-  .nodejsLogo_S {
-    opacity: 0;
-    &.visible {
-      opacity: 1;
-      transition: opacity 2.5s;
+  &.graphql {
+    .circle {
+      @include opacityToggle();
     }
   }
-  .mongodb {
+  &.mongodb {
     width: 18em;
     padding: 5em 0 5em 0;
     filter: blur(20px);

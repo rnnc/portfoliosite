@@ -32,10 +32,3 @@ body {
   padding: 0;
   margin: 0;
 }
-
-.app {
-  scroll-snap-type: y proximity;
-  >div {
-    scroll-snap-align: center;
-  }
-}

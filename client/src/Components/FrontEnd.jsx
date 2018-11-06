@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import Observer from 'react-intersection-observer';
 
-import { ReactLogo, ReduxLogo, ApolloLogo } from './FrontEndLogos';
-import CardContainer from './CardContainer';
+import { ReactLogo, ReduxLogo, ApolloLogo, HTMLLogo ,CSSLogo, SassLogo } from './Logos/FrontEndLogos';
 
-import '../Styles/FrontEndCard.scss';
-import '../Styles/Cards.scss';
+import CardContainer from './Cards/Container';
+
+import './Styles/FrontEndCard.scss';
+import './Styles/Cards.scss';
 
 export default class FrontEndCard extends Component {
 
   render() {
 
-    const FrontEnd = [ReactLogo, ReduxLogo, ApolloLogo];
+    const FrontEnd = [ReactLogo, ReduxLogo, ApolloLogo, HTMLLogo, CSSLogo, SassLogo];
 
     const blurbDescription =
       `Make responsive front end `;
@@ -21,7 +22,7 @@ export default class FrontEndCard extends Component {
         { ({ inView, ref }) => {
           const entered = inView ? "enter" : "";
           return (
-            <div className="CardContainer" ref={ ref }>
+            <div className="masterContainer" ref={ ref }>
 
               <div className={ `background ${entered}` } />
 
@@ -50,7 +51,7 @@ export default class FrontEndCard extends Component {
               </div>
 
               <div className={ `content ${entered}` }>
-                <CardContainer>
+                <CardContainer cardsType="frontend">
                   { FrontEnd }
                 </CardContainer>
               </div>
