@@ -1,55 +1,45 @@
 import React, { Component } from 'react'
-import classnames from 'classnames';
 import Observer from 'react-intersection-observer';
-
-import './Styles/Intro.scss'
 
 export default class Intro extends Component {
 
-  state = {
-    commands: [
-      "npm run",
-      "node app.js",
-      "yarn start"
-    ]
-  }
+  commands = [
+    "npm run",
+    "node app.js",
+    "yarn start"
+  ]
 
   getCommand() {
     const rand = Math.floor(Math.random() * 3);
-    return this.state.commands[rand];
+    return this.commands[rand];
   }
 
   render() {
     return (
       <Observer threshold={ 0.5 }>
         { ({ inView, ref }) => {
-
+          const visible = inView ? "visible" : "";
           return (
-            <div ref={ ref }
-              className={ classnames("introWrapper", { "visible": inView }) }
-            >
+            <div className={ `introWrapper ${visible}` }>
 
-              <div className={ classnames("background", { "visible": inView }) } />
+              <div className={ `background ${visible}` } />
 
-              <div className="codewrapper">
-
+              <div className="codewrapper" ref={ ref }>
                 <div className="prompt" >
                   { " $ " }
                 </div>
-
-                <div className={ classnames("text", { "typewriter": inView }) }>
-                  { this.getCommand() }
+                <div className={ `text ${visible}` }>
+                  { inView ? this.getCommand() : "" }
                 </div>
+              </div>
 
-                <div className={ classnames("consoleout", { "entered": inView }) }>
-                  <div className={ classnames({ "visible": inView }) }>
-                    { ` { hello World } ` }
-                  </div>
-                  <div className={ classnames({ "visible": inView }) }>
-                    { " my name is Rohan " }
-                  </div>
-                </div>
-
+              <div className={ `consoleout ${visible}` }>
+                <span className={ visible }>
+                  { ` { hello World } ` }
+                </span>
+                <span className={ visible }>
+                  { " my name is Rohan " }
+                </span>
               </div>
 
             </div>

@@ -9,13 +9,13 @@ export default class Card extends Component {
     const selected = this.props.isActive ? 'selected' : '';
 
     return (
-      <div className={ `card ${selected}` }>
+      <div className={ `card ${selected}` } onBlur={ console.log("blur") }>
 
         <div className={ `inner ${selected}` } onClick={ this.handleClick } >
           { (Array.isArray(this.props.children)) ? this.props.children[0] : '' }
         </div>
 
-        <div className={ `info ${selected}` }>
+        <div className={ `info ${selected}` } onClick={ this.handleClick }>
           <div className={ `textContent ${selected}` }>
             { (Array.isArray(this.props.children)) ? this.props.children[1] : '' }
           </div>

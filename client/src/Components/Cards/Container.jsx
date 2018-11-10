@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-import '../Styles/Cards.scss';
-
 import Card from './Card';
 
 export default class CardContainer extends Component {

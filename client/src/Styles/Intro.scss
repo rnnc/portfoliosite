@@ -1,0 +1,185 @@
+$bgImage: url('../images/bg_code.jpg');
+@mixin common {
+  font-family: "Ubuntu Mono";
+  font-size: 2em;
+  position: relative;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blinking-caret {
+  from,
+  to {
+    border-color: transparent
+  }
+  45% {
+    border-color: orange
+  }
+}
+
+@keyframes console-reveal {
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.introWrapper {
+  display: inline-block;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(14, 14, 14);
+  .background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: $bgImage;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: round;
+    background-position: center center;
+    filter: blur(8px) grayscale(50%);
+    z-index: 0;
+    &.visible {
+      transition: filter 2s, transform 1.5s;
+      filter: blur(12.5px) grayscale(100%);
+      transform: scale(1.02);
+    }
+  }
+}
+
+.codewrapper {
+  display: inline-flex;
+  padding: 3% 0 0 3%;
+  .text {
+    color: rgb(23, 116, 23);
+    @include common();
+    &.visible {
+      display: inherit;
+      overflow: hidden;
+      padding-right: 5px;
+      border-right: .15em solid white;
+      white-space: nowrap;
+      letter-spacing: .05em;
+      animation: typing 1.75s steps(44, end), blinking-caret .50s step-end infinite;
+    }
+  }
+  .prompt {
+    color: white;
+    margin-right: 0.5em;
+    @include common();
+  }
+}
+
+.consoleout {
+  border-radius: 20px;
+  background: #1E1E1E;
+  border: 2.5px solid rgb(40, 61, 40);
+  box-shadow: 0px 0px 50px 5px rgba(21, 85, 53, 0.171);
+  height: auto;
+  width: 35em;
+  padding: 2em;
+  position: absolute;
+  bottom: 5%;
+  left: 200%;
+  transition: left 1s 2.5s;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  &:hover {
+    box-shadow: 0px 0px 50px 15px rgba(21, 85, 53, 0.171);
+    transition: all 0.75s;
+  }
+  &.visible {
+    left: 65%;
+    transition: left 1s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s, box-shadow 0.5s;
+  }
+  >span {
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    white-space: nowrap;
+    color: white;
+  }
+  >span:nth-child(2) {
+    text-align: right;
+    padding-top: 3.5em;
+    padding: 3.5em 0 1em 0;
+  }
+  @media screen and (max-width: 500px) {
+    transform: scale(0.5);
+  }
+}
+
+@media screen and (max-width: 1655px) {
+  .consoleout {
+    &.visible {
+      left: 55%;
+    }
+  }
+}
+
+@media screen and (max-width:1300px) {
+  .consoleout {
+    &.visible {
+      left: 42%;
+    }
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .consoleout {
+    &.visible {
+      left: 28%;
+      transform: scale(0.9);
+    }
+  }
+}
+
+@media screen and (max-width:770px) {
+  .consoleout {
+    &.visible {
+      left: 20%;
+      transform: scale(0.75);
+    }
+  }
+}
+
+@media screen and (max-width:650px) {
+  .consoleout {
+    &.visible {
+      left: 10%;
+    }
+  }
+}
+
+@media screen and (max-width:575px) {
+  .consoleout {
+    &.visible {
+      left: 0;
+      transform: scale(0.6);
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .consoleout {
+    &.visible {
+      left: -20%;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .consoleout {
+    &.visible {
+      left: -25%;
+    }
+  }
+}

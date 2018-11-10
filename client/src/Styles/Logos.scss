@@ -1,0 +1,206 @@
+@mixin opacityToggle($tDuration:0.5s, $tDelay:0.75s) {
+  opacity: 0;
+  &.visible {
+    opacity: 1;
+    transition: opacity $tDuration $tDelay;
+  }
+}
+
+@mixin translateElementX($transLen, $tDuration, $tDelay:0s) {
+  opacity: 0;
+  transform: translateX($transLen);
+  transition: transform 0.15s, opacity 0.15s;
+  &.visible {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform $tDuration $tDelay, opacity 0.25s;
+  }
+}
+
+@mixin translateXFill($transDur, $fillDelay) {
+  opacity: 0;
+  transform: translateX(3em);
+  fill: #EBEBEB;
+  transition: all 0.15s;
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+    fill: #FFF;
+    transition: transform $transDur, fill 0.75s $fillDelay, opacity 0.15s;
+  }
+}
+
+$sassColor: #CD6799;
+.svgLogos {
+  height:100%;
+  width:100%;
+  padding: 10%;
+  position: relative;
+  &.html {
+    .path_bg {
+      @include opacityToggle(1s, 0.25s);
+    }
+    .path_glow {
+      @include opacityToggle(0.75s, 0.75s);
+    }
+    .path_5L {
+      @include translateElementX(-3em, 0.5s);
+    }
+    .path_5R {
+      @include translateXFill(0.5s, 0.3s);
+    }
+  }
+  &.css {
+    .poly_bg {
+      @include opacityToggle(1s, 0.25s);
+    }
+    .poly_glow {
+      @include opacityToggle(0.75s, 0.85s);
+    }
+    .poly_3L1 {
+      @include translateElementX(-4em, 1s);
+    }
+    .poly_3L2 {
+      @include translateElementX(-3em, 0.7s);
+    }
+    .poly_3L3 {
+      @include translateElementX(-2em, 0.3s);
+    }
+    .poly_3R {
+      @include translateXFill(1s, 0.85s);
+    }
+  }
+  &.sass {
+    left:2%;
+    .path {
+      fill: transparent;
+      stroke-width: 2.5;
+      stroke: $sassColor;
+      transition: fill 0.5s;
+      &.visible {
+        fill: $sassColor;
+        transition: fill 1s 1.5s, stroke 0.25s 1.75s;
+        stroke: transparent;
+      }
+    }
+  }
+  &.react {
+    .circle {
+      @include opacityToggle();
+    }
+  }
+  &.redux {
+    .circle {
+      @include opacityToggle();
+    }
+  }
+  &.apollo {
+    .circle,
+    .letter_A {
+      @include opacityToggle();
+    }
+  }
+  &.nodejs {
+    .letter_S {
+      @include opacityToggle(1s, 1s);
+    }
+  }
+  &.webpack {
+    $class-prefix: face !default;
+    .inner {
+      @for $i from 1 through 3 {
+        .#{$class-prefix}__#{$i} {
+          $_delay: #{0.25+(0.25*$i)}s;
+          opacity: 0;
+          transform-origin: center;
+          transform: scale(0.8);
+          &.visible {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s $_delay, transform 0.4s $_delay;
+          }
+        }
+      }
+    }
+    .outer {
+      .face__1 {
+        transform: translate(-5px, 0);
+      }
+      .face__2,
+      .face__3 {
+        transform: translate(0, 5px);
+      }
+      .face__4 {
+        transform: translate(5px, 0);
+      }
+      .face__5,
+      .face__6 {
+        transform: translate(0, -5px);
+      }
+      @for $i from 1 to 7 {
+        .#{$class-prefix}__#{$i} {
+          $_delay: #{0.2*$i}s;
+          opacity: 0;
+          transform-origin: center;
+          &.visible {
+            opacity: 1;
+            transform: translate(0, 0);
+            transition: opacity 0.5s $_delay, transform 0.4s $_delay;
+          }
+        }
+      }
+    }
+  }
+  &.graphql {
+    .circle {
+      @include opacityToggle(1s, 0.25s);
+    }
+  }
+  &.mongodb {
+    .letter_mongo{
+      transform: translate(-15%,0)
+    }
+    .letter_DB{
+      transform: translate(15%,0)
+    }
+    .letter_mongo, .letter_DB{
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s;
+      &.visible{
+        opacity: 1;
+        transform: translate(0,0);
+        transition: opacity 0.5s 0.25s, transform 0.75s;
+      }
+    }
+    .shield{
+      opacity:0;
+      transform-origin: center;
+      transform: scale(1.2);
+      transition: opacity 0.5s, transform 0.5s;
+      &.visible{
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 0.5s, transform 0.5s;
+      }
+    }
+  }
+}
+
+.logo.expressjs {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 5.35em;
+  color: #969696;
+  text-shadow: 2px 2px black;
+  line-height: 2.9em;
+  position: relative;
+  right: 0.05em;
+  letter-spacing: -40px;
+  opacity: 0;
+  &.visible {
+    opacity: 1;
+    letter-spacing: -6px;
+    transition: opacity 0.5s, letter-spacing 0.75s;
+  }
+}

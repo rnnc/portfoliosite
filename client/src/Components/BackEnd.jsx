@@ -2,21 +2,19 @@ import React, { Component } from 'react'
 import Observer from 'react-intersection-observer';
 
 import {
-  ReactLogo, ReduxLogo, ApolloLogo, HTMLLogo, CSSLogo, SassLogo
-} from './Logos/FrontEndLogos';
+  NodeJSLogo, WebpackLogo, ExpressLogo, GraphQlLogo, MongoDBLogo
+} from './Logos/BackEndLogos';
 
 import CardContainer from './Cards/Container';
 
-export default class FrontEndCard extends Component {
-
+export default class BackEnd extends Component {
   render() {
 
-    const FrontEnd = [HTMLLogo, CSSLogo, SassLogo, ReactLogo, ReduxLogo, ApolloLogo];
+    const BackEnd = [NodeJSLogo, WebpackLogo, ExpressLogo, GraphQlLogo, MongoDBLogo];
 
     const blurbDescription =
-      `Using the latest in front end web technology
-      gives me the ability to make fast, responsive, animated,
-      and sleek front ends for web pages`;
+      `Make robust efficient back end servers
+      using latest in NodeJS & database querying`;
 
     return (
       <Observer threshold={ 0.3 }>
@@ -25,19 +23,9 @@ export default class FrontEndCard extends Component {
           return (
             <div className="masterContainer" ref={ ref }>
 
-              <div className={ `background frontend ${entered}` } />
+              <div className={ `background backend ${entered}` } />
 
               <div className={ `descriptor ${entered}` }>
-
-                <div className="titleContainer">
-                  <div className="title">
-                    <div className={ `animationContainer ${entered}` }>
-                      <div className="animationText">
-                        { "Front End" }
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 <div className="blurbContainer">
                   <div className="blurb">
@@ -49,16 +37,26 @@ export default class FrontEndCard extends Component {
                   </div>
                 </div>
 
+                <div className="titleContainer">
+                  <div className="title">
+                    <div className={ `animationContainer ${entered}` }>
+                      <div className="animationText">
+                        { "Back End" }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div className={ `content ${entered}` }>
-                <CardContainer cardsType="frontend">
-                  { FrontEnd }
+                <CardContainer>
+                  { BackEnd }
                 </CardContainer>
               </div>
 
             </div>
-          );
+          )
         } }
       </Observer>
     )

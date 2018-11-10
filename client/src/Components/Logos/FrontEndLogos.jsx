@@ -1,8 +1,6 @@
 import React, {PureComponent} from 'react';
 import Observer from 'react-intersection-observer';
 
-import '../Styles/Logos.scss';
-
 import { pathAnimate } from '../Animations';
 
 export class ReactLogo extends PureComponent {
@@ -118,12 +116,19 @@ export class ApolloLogo extends PureComponent{
 export class HTMLLogo extends PureComponent{
   render() {
     return (
-      <svg className="svgLogos html" viewBox="0 0 512 512">
-        <path fill="#E34F26" d="M71,460 L30,0 481,0 440,460 255,512"/>
-        <path fill="#EF652A" d="M256,472 L405,431 440,37 256,37"/>
-        <path fill="#EBEBEB" d="M256,208 L181,208 176,150 256,150 256,94 255,94 114,94 115,109 129,265 256,265zM256,355 L255,355 192,338 188,293 158,293 132,293 139,382 255,414 256,414z"/>
-        <path fill="#FFF" d="M255,208 L255,265 325,265 318,338 255,355 255,414 371,382 372,372 385,223 387,208 371,208zM255,94 L255,129 255,150 255,150 392,150 392,150 392,150 393,138 396,109 397,94z"/>
-      </svg>
+      <Observer threshold={0.75}>
+        { ({ inView, ref }) => {
+          const visible = inView ? "visible":"";
+          return (
+            <svg className="svgLogos html" viewBox="0 0 512 512" ref={ref}>
+              <path className={`path_bg ${visible}`} fill="#E34F26" d="M71,460 L30,0 481,0 440,460 255,512"/>
+              <path className={`path_glow ${visible}`} fill="#EF652A" d="M256,472 L405,431 440,37 256,37"/>
+              <path className={`path_5L ${visible}`} fill="#EBEBEB" d="M256,208 L181,208 176,150 256,150 256,94 255,94 114,94 115,109 129,265 256,265zM256,355 L255,355 192,338 188,293 158,293 132,293 139,382 255,414 256,414z"/>
+              <path className={`path_5R ${visible}`} fill="#FFF" d="M255,208 L255,265 325,265 318,338 255,355 255,414 371,382 372,372 385,223 387,208 371,208zM255,94 L255,129 255,150 255,150 392,150 392,150 392,150 393,138 396,109 397,94z"/>
+            </svg>  
+          )
+        }}
+      </Observer>
     )
   }
 }
@@ -131,16 +136,23 @@ export class HTMLLogo extends PureComponent{
 export class CSSLogo extends PureComponent {
   render() {
     return (
-      <svg className="svgLogos css" viewBox="0 0 362.7 412">
-	      <polygon fill="#264DE4" points="362.7,0.6 329.7,370.8 181.1,412 33,370.9 0,0.6 	"/>
-	      <polygon fill="#2965F1" points="301.4,347.2 329.6,30.9 181.4,30.9 181.4,380.5 	"/>
-	      <polygon fill="#EBEBEB" points="75.7,168.2 79.7,213.6 181.4,213.6 181.4,168.2 	"/>
-	      <polygon fill="#EBEBEB" points="181.4,76.3 181.2,76.3 67.5,76.3 71.6,121.7 181.4,121.7 	"/>
-	      <polygon fill="#EBEBEB" points="181.4,333.4 181.4,286.2 181.2,286.2 130.6,272.5 127.4,236.3 102.8,236.3 
-	      	81.8,236.3 88.1,307.6 181.2,333.5 	"/>
-	      <polygon fill="#FFFFFF" points="237.1,213.6 231.9,272.5 181.2,286.2 181.2,333.4 274.3,307.6 275,300 285.7,180.4 
-	      	286.8,168.2 295,76.3 181.2,76.3 181.2,121.7 245.2,121.7 241.1,168.2 181.2,168.2 181.2,213.6 	"/>
-      </svg>
+      <Observer threshold={0.75}>
+        { ({ inView, ref }) => {
+          const visible = inView ? "visible":"";
+          return (
+            <svg className="svgLogos css" viewBox="0 0 362.7 412" ref={ref}>
+	            <polygon className={`poly_bg ${visible}`} fill="#264DE4" points="362.7,0.6 329.7,370.8 181.1,412 33,370.9 0,0.6 	"/>
+	            <polygon className={`poly_glow ${visible}`} fill="#2965F1" points="301.4,347.2 329.6,30.9 181.4,30.9 181.4,380.5 	"/>
+	            <polygon className={`poly_3L1 ${visible}`} fill="#EBEBEB" points="181.4,76.3 181.2,76.3 67.5,76.3 71.6,121.7 181.4,121.7 	"/>
+              <polygon className={`poly_3L2 ${visible}`} fill="#EBEBEB" points="75.7,168.2 79.7,213.6 181.4,213.6 181.4,168.2 	" />
+	            <polygon className={`poly_3L3 ${visible}`} fill="#EBEBEB" points="181.4,333.4 181.4,286.2 181.2,286.2 130.6,272.5 127.4,236.3 102.8,236.3 
+	            	81.8,236.3 88.1,307.6 181.2,333.5 	"/>
+	            <polygon className={`poly_3R ${visible}`} fill="#FFF" points="237.1,213.6 231.9,272.5 181.2,286.2 181.2,333.4 274.3,307.6 275,300 285.7,180.4 
+	            	286.8,168.2 295,76.3 181.2,76.3 181.2,121.7 245.2,121.7 241.1,168.2 181.2,168.2 181.2,213.6 	"/>
+            </svg>
+          )
+        }}
+      </Observer>
     )
   }
 }
@@ -148,10 +160,10 @@ export class CSSLogo extends PureComponent {
 export class SassLogo extends PureComponent{
   render() {
     return (
-      <Observer>
+      <Observer threshold={0.75}>
         { ({ inView, ref }) => {
 
-          pathAnimate(inView, ".svgLogos.sass .path", {in:2200});
+          pathAnimate(inView, ".svgLogos.sass .path", {in:2000});
           
           return (
             <svg className="svgLogos sass" viewBox="0 0 560 423" ref={ref}>
