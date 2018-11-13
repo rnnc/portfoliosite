@@ -8,7 +8,6 @@ export default class CardContainer extends Component {
     super(props);
     this.state = { selected: null };
     this.LogoArray = [...this.props.children];
-    console.log(this.LogoArray);
   }
 
   handleClick = (index) => {

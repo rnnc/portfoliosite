@@ -9,9 +9,9 @@ export default class Card extends Component {
     const selected = this.props.isActive ? 'selected' : '';
 
     return (
-      <div className={ `card ${selected}` } onBlur={ console.log("blur") }>
+      <div className={ `card ${selected}` } >
 
-        <div className={ `inner ${selected}` } onClick={ this.handleClick } >
+        <div className={ `inner ${selected}` } onClick={ this.handleClick }>
           { (Array.isArray(this.props.children)) ? this.props.children[0] : '' }
         </div>
 

@@ -15,7 +15,7 @@ export default class FrontEndCard extends Component {
 
     const blurbDescription =
       `Using the latest in front end web technology
-      gives me the ability to make fast, responsive, animated,
+      gives the ability to make fast, responsive, animated,
       and sleek front ends for web pages`;
 
     return (
@@ -29,21 +29,11 @@ export default class FrontEndCard extends Component {
 
               <div className={ `descriptor ${entered}` }>
 
-                <div className="titleContainer">
+                <div className="titleContainer frontend">
                   <div className="title">
                     <div className={ `animationContainer ${entered}` }>
                       <div className="animationText">
-                        { "Front End" }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="blurbContainer">
-                  <div className="blurb">
-                    <div className={ `animationContainer ${entered}` }>
-                      <div className="animationText">
-                        { blurbDescription }
+                        { "Front End Tech" }
                       </div>
                     </div>
                   </div>
@@ -55,6 +45,15 @@ export default class FrontEndCard extends Component {
                 <CardContainer cardsType="frontend">
                   { FrontEnd }
                 </CardContainer>
+              </div>
+
+              <div className="blurbContainer">
+                <div className="blurb">
+                  <div className="bg" />
+                  <div className="blurbText">
+                    { blurbDescription }
+                  </div>
+                </div>
               </div>
 
             </div>

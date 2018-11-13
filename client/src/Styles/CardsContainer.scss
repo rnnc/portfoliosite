@@ -1,14 +1,27 @@
 $bgImage_fe: url('../images/bg_code2.jpg');
 $bgImage_be: url('../images/bg_sparks.jpg');
+$bgImage_tl: url('../images/bg_buildings.jpg');
+$bgImage_ot: url('../images/bg_windmills.jpg');
 .masterContainer {
   display: flex;
   flex-flow: column;
   height: 100vh;
-  background: rgb(14, 14, 14);
-  clip-path: polygon(100% 0, 100% 100%, 0% 100%, 0 0);
+  @media screen and (max-height: 900px) {
+    height: auto;
+  }
+  @media screen and (max-width: 856px) {
+    height: auto;
+  }
+  background: rgb(14,
+  14,
+  14);
+  clip-path: polygon(100% 0,
+  100% 100%,
+  0% 100%,
+  0 0);
   .background {
     position: absolute;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     &.frontend {
       background-image: $bgImage_fe;
@@ -16,15 +29,26 @@ $bgImage_be: url('../images/bg_sparks.jpg');
     &.backend {
       background-image: $bgImage_be;
     }
+    &.tools {
+      background-image: $bgImage_tl;
+      &.enter {
+        filter: blur(7px) grayscale(50%);
+      }
+    }
+    &.other {
+      background-image: $bgImage_ot;
+      &.enter{
+        filter: blur(9px) grayscale(15%);
+      }
+    }
     background-attachment: fixed;
     background-size: cover;
     background-repeat: round;
-    background-position: center center;
     z-index: -1;
-    filter: blur(8px) grayscale(50%);
+    filter: blur(1.5px) grayscale(20%);
     &.enter {
       transition: filter 1s;
-      filter: blur(12.5px) grayscale(100%);
+      filter: blur(10px) grayscale(70%);
     }
   }
   .descriptor {
@@ -36,18 +60,15 @@ $bgImage_be: url('../images/bg_sparks.jpg');
     flex: 2;
     box-shadow: 0px 1px 35px 7.5px black;
     &.enter {
-      flex: 1;
+      flex: 1.5;
       opacity: 1;
       transition: opacity 1.5s;
     }
     .titleContainer {
-      flex: 1 1 400px;
-      min-width: 35%;
+      flex: 1 1;
       padding: 2%;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: left;
+      align-self: center;
       .title {
         position: relative;
         font-family: 'Montserrat', sans-serif;
@@ -57,11 +78,6 @@ $bgImage_be: url('../images/bg_sparks.jpg');
         transition: text-shadow 0.5s;
         font-size: 3.5em;
         font-weight: 700;
-        display: inline-block;
-        &:hover {
-          text-shadow: -3.5px -5px 5px rgba(19, 88, 128, 0.925);
-          transition: text-shadow 0.25s;
-        }
       }
       .animationContainer {
         .animationText {
@@ -89,52 +105,6 @@ $bgImage_be: url('../images/bg_sparks.jpg');
         }
       }
     }
-    .blurbContainer {
-      flex: 3 1 600px;
-      padding: 2.5%;
-      min-width: 35%;
-      height: auto;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      font-size: 1.3em;
-      text-align: right;
-      white-space: pre;
-      @media screen and (max-width: 625px) {
-        font-size: 1.1em;
-        text-align: center;
-        white-space: pre-wrap;
-      }
-      .blurb {
-        position: relative;
-        display: inline-block;
-      }
-      .animationContainer {
-        .animationText {
-          opacity: 0;
-        }
-        &.enter {
-          .animationText {
-            opacity: 1;
-            transition: opacity 0.1s 1s;
-          }
-          &:before,
-          &:after {
-            content: "";
-            position: absolute;
-            top: 10;
-            right: 50;
-            height: 100%;
-            z-index: 10;
-          }
-          &:before {
-            background: #154965;
-            animation: revealAnimLTR 1.8s ease;
-          }
-        }
-      }
-    }
     @media screen and (max-width: 625px) {
       flex-direction: column;
     }
@@ -146,6 +116,38 @@ $bgImage_be: url('../images/bg_sparks.jpg');
     &.enter {
       transition: flex 2s;
       flex: 4;
+    }
+  }
+  .blurbContainer {
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    text-align: center;
+    color: white;
+    @media screen and (max-width: 625px) {
+      font-size: 1.1em;
+      text-align: center;
+      white-space: pre-wrap;
+    }
+    .blurb {
+      position: relative;
+      border-top: 5px solid rgba(255, 255, 255, 0.342);
+      border-bottom: 5px solid rgba(255, 255, 255, 0.342);
+      .bg {
+        position: absolute;
+        bottom: 0%;
+        filter: blur(5px);
+        background: rgba(38, 64, 94, 0.158);
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
+      .blurbText{
+        padding: 2.5% 2.5%;
+      }
     }
   }
 }

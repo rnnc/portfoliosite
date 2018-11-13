@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
 import Observer from 'react-intersection-observer';
 
-import {
-  NodeJSLogo, ExpressLogo, GraphQlLogo, MongoDBLogo
-} from './Logos/BackEndLogos';
-
 import CardContainer from './Cards/Container';
 
-export default class BackEnd extends Component {
+import { AIllustratorLogo, APhotoshopLogo, APremiereProLogo, AAfterEffectsLogo } from './Logos/OtherLogos';
+
+export default class Other extends Component {
+
   render() {
 
-    const BackEnd = [NodeJSLogo, ExpressLogo, GraphQlLogo, MongoDBLogo];
+    const Other = [AIllustratorLogo, APhotoshopLogo, APremiereProLogo, AAfterEffectsLogo];
 
     const blurbDescription =
-      `Make robust efficient back end servers
-      using latest in NodeJS & database querying`;
+      `Other useful software I've picked up over the years`;
 
     return (
       <Observer threshold={ 0.3 }>
@@ -22,8 +20,7 @@ export default class BackEnd extends Component {
           const entered = inView ? "enter" : "";
           return (
             <div className="masterContainer" ref={ ref }>
-
-              <div className={ `background backend ${entered}` } />
+              <div className={ `background other ${entered}` } />
 
               <div className={ `descriptor ${entered}` }>
 
@@ -31,7 +28,7 @@ export default class BackEnd extends Component {
                   <div className="title">
                     <div className={ `animationContainer ${entered}` }>
                       <div className="animationText">
-                        { "Back End Tech" }
+                        { "Other" }
                       </div>
                     </div>
                   </div>
@@ -41,7 +38,7 @@ export default class BackEnd extends Component {
 
               <div className={ `content ${entered}` }>
                 <CardContainer>
-                  { BackEnd }
+                  { Other }
                 </CardContainer>
               </div>
 

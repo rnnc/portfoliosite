@@ -41,38 +41,6 @@ export class NodeJSLogo extends PureComponent {
   
 }
 
-export class WebpackLogo extends PureComponent {
-  render() {
-
-    const innerFill = "#1C78C0";
-    const outerFill = "#8ED6FB";
-
-    return (
-      <Observer threshold={0.7}>
-        { ({ inView, ref }) => {
-          const visible = inView ? "visible" : "";
-          return (
-            <svg className="svgLogos webpack" viewBox="0 0 58.9 64.8" ref={ref}>
-              <g className="inner">
-	              <polygon className={ `face__1 ${visible}` } fill={ innerFill } points="28.4,33.3 12.4,24 12.4,41.4 28.4,50.2" />
-	              <polygon className={ `face__2 ${visible}` } fill={ innerFill } points="30.6,33.3 46.6,24 46.6,41.4 30.6,50.2" />
-	              <polygon className={ `face__3 ${visible}` } fill={ innerFill } points="45.5,22 29.5,31.3 13.5,22 29.5,13.2" />
-              </g>
-              <g className="outer">
-	              <polygon className={ `face__1 ${visible}` } fill={ outerFill } points="0.6,48 10.1,42.5 10.1,22.8 0.6,17.3"/>
-	              <polygon className={ `face__2 ${visible}` } fill={ outerFill } points="28.4,64.3 2.4,49.6 12.2,44 28.4,52.9"/>                
-	              <polygon className={ `face__3 ${visible}` } fill={ outerFill } points="30.6,64.3 56.6,49.6 46.8,44 30.6,52.9"/>
-                <polygon className={ `face__4 ${visible}` } fill={ outerFill } points="58.4,17.3 48.9,22.8 48.9,42.5 58.4,48" />
-	              <polygon className={ `face__5 ${visible}` } fill={ outerFill } points="30.6,0.3 57.1,15.4 47.6,20.8 30.5,11.4"/>
-                <polygon className={ `face__6 ${visible}` } fill={ outerFill } points="28.4,0.3 1.8,15.4 11.2,20.8 28.4,11.4" />
-              </g>
-            </svg>
-          );
-        }}
-      </Observer>
-    )
-  }
-}
 
 export class ExpressLogo extends PureComponent{  
   render() {
