@@ -26,6 +26,7 @@ export default class FrontEndCard extends Component {
             <div className="masterContainer" ref={ ref }>
 
               <div className={ `background frontend ${entered}` } />
+              <div className={ `background frontend ${entered}` } />
 
               <div className={ `descriptor ${entered}` }>
 

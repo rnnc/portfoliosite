@@ -8,7 +8,7 @@ html {
 
 html,
 body {
-  overflow-x: hidden;
+  overflow-x:hidden;
 }
 
 @-moz-document url-prefix() {
@@ -25,4 +25,6 @@ body {
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   margin: 0;
+  overflow-y:hidden;
+  overflow-x:hidden;
 }
