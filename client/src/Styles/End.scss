@@ -1,4 +1,5 @@
 $bgImage: url("../images/bg_buildings2.jpg");
+$wbgImage: url("../images/bg_code3.jpg");
 .endContainer {
   height: 100vh;
   background: rgb(21, 22, 32);
@@ -17,49 +18,61 @@ $bgImage: url("../images/bg_buildings2.jpg");
   }
   .windowContainer {
     z-index: 1;
-    flex: 3;
-    margin-left: 5%;
+    padding: 15%;
     .window {
       border-radius: 3%;
       border: 3px solid white;
       box-shadow: 0 0 25px 7.5px black;
       height: 0em;
-      .text {
-        opacity: 0;
-        color: white;
-        text-align: center;
-        font-size: 2em;
-        padding: 8em 0;
+      .window_bg {
+        position: fixed;
+        background-image: $wbgImage;
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 500px;
+        z-index: 5;
+      }
+      .textBox {
+        display: flex;
+        flex-flow: column;
+        .text {
+          opacity: 0;
+          flex: 1;
+          color: white;
+          text-align: center;
+          font-size: 2em;
+          left: 50%;
+          z-index: 2;
+        }
+        a.gh_icon {
+          z-index: 1;
+          flex: 1;
+          opacity: 0;
+          .iconContainer {
+            background: rgba(41, 41, 51, 0.671);
+            width: 25%;
+            padding: 2%;
+            box-shadow: 0 0 20px 1px rgba(24, 24, 29, 0.856);
+            transition: background 0.5s, box-shadow 0.5s, transform 0.5s;
+            &:hover {
+              background: rgba(25, 25, 31, 0.671);
+              box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+              transform: scale(1.1);
+              transition: background 0.25s, box-shadow 0.25s, transform 0.25s;
+              cursor: pointer;
+            }
+          }
+        }
       }
       &.visible {
         height: 35em;
         transition: height 1s;
-        .text {
+        .text,
+        .gh_icon {
           opacity: 1;
           transition: opacity 1.25s 0.25s;
         }
-      }
-    }
-  }
-  a.gh_icon {
-    z-index: 1;
-    flex: 2;
-    padding-left: 5%;
-    &:visited {
-      background: blue;
-    }
-    .iconContainer {
-      background: rgba(41, 41, 51, 0.671);
-      width: 55%;
-      padding: 3%;
-      box-shadow: 0 0 20px 1px rgba(24, 24, 29, 0.856);
-      transition: background 0.5s, box-shadow 0.5s, transform 0.5s;
-      &:hover {
-        background: rgba(25, 25, 31, 0.671);
-        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
-        transform: scale(1.1);
-        transition: background 0.25s, box-shadow 0.25s, transform 0.25s;
-        cursor: pointer;
       }
     }
   }
