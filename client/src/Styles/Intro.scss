@@ -5,6 +5,15 @@ $bgImage: url('../images/bg_code.jpg');
   position: relative;
 }
 
+@mixin hoverBG( $color,
+$transDur: 0.25s) {
+  &:hover {
+    background: $color;
+    transition: background-color $transDur, color $transDur;
+    color: white;
+  }
+}
+
 @keyframes typing {
   from {
     width: 0
@@ -78,14 +87,12 @@ $bgImage: url('../images/bg_code.jpg');
 }
 
 .consoleout {
-  border-radius: 10px;
-  background: #1E1E1E;
-  border: 2.5px solid rgb(40, 61, 40);
-  border-top: 5px solid black;
+  /* border-radius: 0 0 10px 10px; */
+  background: #141414;
+  /* border: 2.5px solid rgb(40, 61, 40); */
   box-shadow: 0px 0px 50px 5px rgba(21, 85, 53, 0.171);
   height: auto;
   width: 35em;
-  padding: 2em;
   position: absolute;
   bottom: 5%;
   left: 200%;
@@ -101,18 +108,72 @@ $bgImage: url('../images/bg_code.jpg');
     left: 65%;
     transition: left 1s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s, box-shadow 0.5s;
   }
+  .topbar {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    background: #1b1b1b;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    color: rgb(92, 92, 92);
+    user-select: none;
+    .title {
+      position: absolute;
+      left: 0;
+      padding: 0.5em;
+    }
+    >span {
+      padding: 5px 10px;
+      width: 7%;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.35s, color 0.35s;
+      &.exit {
+        .cross {
+          position: absolute;
+          transform: scale(0.8);
+          bottom: 10%;
+          right: 2.1%;
+        }
+        @include hoverBG(rgba(233, 41, 41, 0.911));
+      }
+      &.expand {
+        @include hoverBG(rgba(250, 215, 18, 0.781));
+      }
+      &.minimize {
+        @include hoverBG(rgba(0, 128, 0, 0.63));
+      }
+    }
+  }
   >span {
     font-family: 'Roboto Mono', sans-serif;
     font-weight: 400;
     font-size: 2.5em;
     white-space: nowrap;
     color: white;
+    padding: 1em;
+    &:nth-of-type(1) {
+      text-align: right;
+      padding-top: 2em;
+    }
+    &:nth-of-type(2) {
+      padding-bottom: 2em;
+    }
+    .bracket {
+      color: rgb(255, 230, 0);
+    }
+    .hw {
+      color: rgb(56, 227, 250);
+    }
+    .name {
+      color: green;
+    }
   }
-  >span:nth-child(2) {
+  /* >span:nth-child(2) {
     text-align: right;
     padding-top: 3.5em;
     padding: 3.5em 0 1em 0;
-  }
+  } */
   @media screen and (max-width: 500px) {
     transform: scale(0.5);
   }

@@ -34,11 +34,31 @@ export default class Intro extends Component {
               </div>
 
               <div className={ `consoleout ${visible}` }>
-                <span className={ visible }>
-                  { ` { hello World } ` }
+                <div className="topbar">
+                  {/* <div className="title">
+                    console
+                  </div> */}
+                  <span className="exit">
+                    <div className="cross">
+                      { "╳" }
+                    </div>
+                  </span>
+                  <span className="expand">
+                    { "☐" }
+                  </span>
+                  <span className="minimize">
+                    { "—" }
+                  </span>
+                </div>
+
+                <span hidden={ !inView }>
+                  <span className="bracket">{ "{ " }</span>
+                  <span className="hw">hello World</span>
+                  <span className="bracket">{ " }" }</span>
                 </span>
-                <span className={ visible }>
-                  { " my name is Rohan " }
+                <span hidden={ !inView }>
+                  <span className="intro_name">{ "my name is " }</span>
+                  <span className="name">{ " Rohan" }</span>
                 </span>
               </div>
 
