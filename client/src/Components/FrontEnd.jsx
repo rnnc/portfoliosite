@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react'
+
 import Observer from 'react-intersection-observer';
+
 
 import {
   ReactLogo, ReduxLogo, ApolloLogo, HTMLLogo, CSSLogo, SassLogo
@@ -11,7 +13,44 @@ export default class FrontEndCard extends Component {
 
   render() {
 
-    const FrontEnd = [HTMLLogo, CSSLogo, SassLogo, ReactLogo, ReduxLogo, ApolloLogo];
+    const FrontEnd = [
+      [
+        HTMLLogo,
+        "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+        "HTML5",
+        "Latest iteration of the web's markup language"
+      ],
+      [
+        CSSLogo,
+        "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3",
+        "CSS3",
+        "Stylesheet language for presentation"
+      ],
+      [
+        SassLogo,
+        "https://sass-lang.com/",
+        "Sass",
+        "Preprocessor scripting language for better & easier styling"
+      ],
+      [
+        ReactLogo,
+        "https://reactjs.org/",
+        "ReactJS",
+        "Facebook's robust front end framework"
+      ],
+      [
+        ReduxLogo,
+        "https://redux.js.org/",
+        "Redux",
+        "State container/provider for webapps"
+      ],
+      [
+        ApolloLogo,
+        "https://www.apollographql.com/",
+        "Apollo",
+        "Front end portion of GraphQL"
+      ]
+    ];
 
     const blurbDescription =
       `Using the latest in front end web technology
@@ -25,8 +64,12 @@ export default class FrontEndCard extends Component {
           return (
             <div className="masterContainer" ref={ ref }>
 
-              <div className={ `background frontend ${entered}` } />
-              <div className={ `background frontend ${entered}` } />
+              <div className={ `background frontend ${entered}` }>
+                {/* <Suspense fallback={ <div>Loading...</div> }>
+                  <BGImage></BGImage>
+                </Suspense> */}
+                stuff
+              </div>
 
               <div className={ `descriptor ${entered}` }>
 

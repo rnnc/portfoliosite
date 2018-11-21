@@ -2,6 +2,17 @@ $bgImage_fe: url('../images/bg_code2.jpg');
 $bgImage_be: url('../images/bg_sparks.jpg');
 $bgImage_tl: url('../images/bg_buildings.jpg');
 $bgImage_ot: url('../images/bg_windmills.jpg');
+
+@mixin backgroundMediaQuery($bgWidth,
+$bgHeight) {
+  @media screen and (max-width: $bgWidth) {
+    height: $bgHeight;
+  }
+  @media screen and (max-height:900px) {
+    height: $bgHeight;
+  }
+}
+
 .masterContainer {
   display: flex;
   flex-flow: column;
@@ -25,33 +36,29 @@ $bgImage_ot: url('../images/bg_windmills.jpg');
     width: 100vw;
     &.frontend {
       background-image: $bgImage_fe;
-      @media screen and (max-width: 855px) {
-        height:210vh;
-      }
+      @include backgroundMediaQuery(855px,
+      201vh);
     }
     &.backend {
       background-image: $bgImage_be;
-      @media screen and (max-width: 892px) {
-        height:190vh;
-      }
+      @include backgroundMediaQuery(892px,
+      190vh);
     }
     &.tools {
       background-image: $bgImage_tl;
       &.enter {
         filter: blur(7px) grayscale(50%);
       }
-      @media screen and (max-width: 856px) {
-        height:200vh;
-      }
+      @include backgroundMediaQuery(856px,
+      200vh);
     }
     &.other {
       background-image: $bgImage_ot;
       &.enter {
         filter: blur(9px) grayscale(15%);
       }
-      @media screen and (max-width: 892px) {
-        height:140vh;
-      }
+      @include backgroundMediaQuery(892px,
+      140vh);
     }
     background-attachment: fixed;
     background-size: cover;
@@ -147,19 +154,19 @@ $bgImage_ot: url('../images/bg_windmills.jpg');
     }
     .blurb {
       position: relative;
-      border-top: 5px solid rgba(255, 255, 255, 0.342);
-      border-bottom: 5px solid rgba(255, 255, 255, 0.342);
+      margin-bottom: 15px;
       .bg {
+        border-top: 5px solid rgba(255, 255, 255, 0.342);
+        border-bottom: 5px solid rgba(255, 255, 255, 0.342);
         position: absolute;
-        bottom: 0%;
-        filter: blur(5px);
-        background: rgba(38, 64, 94, 0.158);
+        /* bottom: 0%; */
+        background: rgba(0, 0, 0, 0.322);
         height: 100%;
         width: 100%;
-        z-index: -1;
       }
       .blurbText {
         padding: 2.5% 2.5%;
+        text-shadow: 1px 1px 7px black;
       }
     }
   }

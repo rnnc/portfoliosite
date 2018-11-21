@@ -12,12 +12,20 @@ export default class Card extends Component {
       <div className={ `card ${selected}` } >
 
         <div className={ `inner ${selected}` } onClick={ this.handleClick }>
-          { (Array.isArray(this.props.children)) ? this.props.children[0] : '' }
+          { this.props.children[0] }
         </div>
 
         <div className={ `info ${selected}` } onClick={ this.handleClick }>
+          <a
+            target="_blank" rel="noopener noreferrer"
+            href={ this.props.children[1] }
+            className={ `link ${selected}` }
+            
+          >
+            { this.props.children[2] }
+          </a>
           <div className={ `textContent ${selected}` }>
-            { (Array.isArray(this.props.children)) ? this.props.children[1] : '' }
+            { this.props.children[3] }
           </div>
         </div>
 

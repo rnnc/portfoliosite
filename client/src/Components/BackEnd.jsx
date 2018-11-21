@@ -10,8 +10,32 @@ import CardContainer from './Cards/Container';
 export default class BackEnd extends Component {
   render() {
 
-    const BackEnd = [NodeJSLogo, ExpressLogo, GraphQlLogo, MongoDBLogo];
-
+    const BackEnd = [
+      [
+        NodeJSLogo,
+        "https://nodejs.org/",
+        "NodeJS",
+        "Javascript runtime environment for the backend"
+      ],
+      [
+        ExpressLogo,
+        "https://expressjs.com/",
+        "ExpressJS",
+        "Backend server framework"
+      ],
+      [
+        GraphQlLogo,
+        "https://graphql.org/",
+        "Graphql",
+        "Query Language that simplifies APIs"
+      ],
+      [
+        MongoDBLogo,
+        "https://www.mongodb.com/",
+        "MongoDB",
+        "NOSql Database for modern apps"
+      ]
+    ]
     const blurbDescription =
       `Make robust efficient back end servers
       using latest in NodeJS & database querying`;

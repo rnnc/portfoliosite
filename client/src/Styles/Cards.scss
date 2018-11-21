@@ -1,3 +1,12 @@
+@mixin opacityToggle($tDuration: 0.5s, $tDelay: 0s) {
+  opacity: 0;
+  transition: opacity $tDuration;
+  &.selected {
+    opacity: 1;
+    transition: opacity $tDuration $tDelay;
+  }
+}
+
 .cardContainer {
   display: flex;
   padding: 2em 1em 1em 1em;
@@ -12,11 +21,6 @@
     text-align: center;
     position: relative;
     padding: 0.5em;
-    /* margin-top: 1em;
-    &.selected{
-      margin-top: 1em;
-      top: 1em;
-    } */
     .inner {
       width: auto;
       position: relative;
@@ -25,7 +29,9 @@
       background: rgba(43, 44, 44, 0.377);
       box-shadow: 0 7px 15px 2px rgba(10, 10, 10, 0.295);
       transition: all 0.75s;
+      z-index: 4;
       &.selected {
+        z-index: 0;
         box-shadow: 0 0 40px 5px rgba(40, 102, 66, 0.418);
         background: rgba(72, 218, 206, 0.308);
         border-radius: 2%;
@@ -43,30 +49,35 @@
       }
     }
     .info {
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      text-shadow: 1px 1px 5px black;
       position: absolute;
-      /* display: flex;
-      justify-content: center;
-      align-items: center; */
-      height: 0%;
-      background: rgba(143, 67, 67, 0.267);
-      transition: all 0.5s;
-      opacity: 1;
-      top: 0;
-      &.selected {
-        overflow: visible;
-        height: 90%;
-        bottom: 5em;
-        /* padding: 2em; 
-         margin-top: 4em; */
-        margin-left: -2%;
-        transition: all 0.5s 0.25s;
+      top: 20%;
+      font-weight: 400;
+      font-size: 1.5em;
+      transition: opacity 0.5s;
+      @include opacityToggle(0.5s);
+      a.link {
+        color: rgb(255, 235, 59);
+        padding: 5px 2px;
+        font-size: 1.2em;
+        pointer-events: none;
+        &.selected {
+          background: transparent;
+          pointer-events: auto;
+          transition: background-color 0.5s;
+          &:hover {
+            background: rgba(0, 0, 0, 0.404);
+            transition: background-color 0.5s;
+          }
+        }
+        @include opacityToggle(0.25s, 0.25s);
       }
       .textContent {
-        opacity: 0;
-        &.selected {
-          opacity: 1;
-          transition: opacity 0.5s ease-in-out 0.5s;
-        }
+        margin-top: 5px;
+        cursor: pointer;
+        @include opacityToggle(0.25s, 0.5s);
       }
     }
   }

@@ -18,18 +18,23 @@ export default class CardContainer extends Component {
   render() {
     return (
       <div>
-        <div className={`cardContainer ${this.props.cardsType}`}>
+        <div className={ `cardContainer ${this.props.cardsType}` }>
           {
-            this.LogoArray.map((Logo, i) =>
-              <Card
-                key={ i } index={ i }
-                isActive={ this.state.selected === i }
-                onClick={ this.handleClick }
-              >
-                <Logo />
-                { "stuff stuff stuff stuff stuff stuff" }
-              </Card>
-            )
+            this.LogoArray.map((LogoData, i) => {
+              const [Logo, title, link, description] = LogoData;
+              return (
+                <Card
+                  key={ i } index={ i }
+                  isActive={ this.state.selected === i }
+                  onClick={ this.handleClick }
+                >
+                  { <Logo /> }
+                  { title }
+                  { link }
+                  { description }
+                </Card>
+              )
+            })
           }
         </div>
       </div>

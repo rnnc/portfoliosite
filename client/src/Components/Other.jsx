@@ -9,7 +9,32 @@ export default class Other extends Component {
 
   render() {
 
-    const Other = [AIllustratorLogo, APhotoshopLogo, APremiereProLogo, AAfterEffectsLogo];
+    const Other = [
+      [
+        AIllustratorLogo,
+        "https://www.adobe.com/ca/products/illustrator.html",
+        "Adobe Illustrator",
+        "Vector Graphics editor"
+      ],
+      [
+        APhotoshopLogo,
+        "https://www.adobe.com/ca/products/photoshop.html",
+        "Adobe Photoshop",
+        "Raster graphics editor and image manipulation"
+      ],
+      [
+        APremiereProLogo,
+        "https://www.adobe.com/ca/products/premiere.html",
+        "Adobe Premiere Pro",
+        "Timeline based video editing application"
+      ],
+      [
+        AAfterEffectsLogo,
+        "https://www.adobe.com/ca/products/aftereffects.html",
+        "Adobe After Effects",
+        "Visual motion graphics and compositing app"
+      ]
+    ];
 
     const blurbDescription =
       `Other useful software I've picked up over the years`;

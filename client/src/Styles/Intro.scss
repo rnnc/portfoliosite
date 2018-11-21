@@ -78,9 +78,10 @@ $bgImage: url('../images/bg_code.jpg');
 }
 
 .consoleout {
-  border-radius: 20px;
+  border-radius: 10px;
   background: #1E1E1E;
   border: 2.5px solid rgb(40, 61, 40);
+  border-top: 5px solid black;
   box-shadow: 0px 0px 50px 5px rgba(21, 85, 53, 0.171);
   height: auto;
   width: 35em;

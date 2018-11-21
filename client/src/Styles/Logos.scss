@@ -35,7 +35,7 @@ $sassColor: #CD6799;
   height: 100%;
   width: 100%;
   padding: 10%;
-  /* position: relative; */
+  z-index: 1;
   &.html {
     .path_bg {
       @include opacityToggle(1s, 0.25s);
@@ -188,12 +188,13 @@ $sassColor: #CD6799;
 }
 
 .logo.expressjs {
-  height: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   font-size: 5.35em;
   color: #969696;
+  user-select: none;
   text-shadow: 2px 2px black;
+  height: 100%;
   line-height: 2.9em;
   position: relative;
   right: 0.05em;
