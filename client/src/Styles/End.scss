@@ -33,7 +33,9 @@ $wbgImage: url("../images/bg_code3.jpg");
     .text {
       flex: 2;
       text-align: center;
-      margin-top: 6%;
+      /* padding-top: 6%; */
+      line-height: 500%;
+      font-size: 2em;
     }
     .link {
       flex: 1;
@@ -52,32 +54,36 @@ $wbgImage: url("../images/bg_code3.jpg");
         }
       }
     }
-    font-size: 2em;
   }
   .emailWindow {
-    font-size: 2em;
-    margin-bottom: 7%;
+    font-size: 2.5em;
+    padding-bottom: 5%;
     .box {
       background: rgba(0, 0, 0, 0.315);
       height: 0%;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
       &.visible {
         height: 100%;
         transition: height 0.5s;
       }
       >div {
         text-align: center;
-        padding: 3% 1.7em;
+        padding: 5% 1.7em;
         opacity: 0;
+        flex: 1;
+        
       }
       .text {
         color: yellow;
-        &.visible{
+        &.visible {
           opacity: 1;
           transition: opacity 0.5s 0.25s;
         }
       }
-      .email{
-        &.visible{
+      .email {
+        &.visible {
           opacity: 1;
           transition: opacity 0.5s 0.35s;
         }
