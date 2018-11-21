@@ -6,8 +6,9 @@ import { GithubIcon } from './Logos/ToolsLogos';
 export default class End extends Component {
   render() {
     const githubLink = "https://github.com/rnnc/portfoliosite";
+    const myEmail = "rohan_choudhary@live.com";
     return (
-      <Observer thershold={ 0.1 }>
+      <Observer thershold={ 0.9 }>
         { ({ inView, ref }) => {
           const visible = inView ? 'visible' : '';
           return (
@@ -15,20 +16,29 @@ export default class End extends Component {
 
               <div className="background" />
 
-              <div className="windowContainer" ref={ ref }>
-                <div className="window_bg" />
-                <div className={ `window ${visible}` }>
-                  <div className="window_bg" />
-                  <div className="textBox">
-                    <div className="text">
-                      <span>Want to see The Code for this Site?</span>
-                      <span>Click Here</span>
-                    </div>
-                    <a className="gh_icon" href={ githubLink } rel="noopener noreferrer" target="_blank">
-                      <div className="iconContainer">
-                        <GithubIcon />
-                      </div>
+              <div className="ghClickout">
+                <div className="text">
+                  { "Want to see how this site is coded?" }
+                </div>
+                <div className="link">
+                  <div className="icon">
+                    <a
+                      href={ githubLink } target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <GithubIcon />
                     </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="emailWindow" ref={ ref }>
+                <div className={ `box ${visible}` }>
+                  <div className={ `text ${visible}` }>
+                    Contact Me Here
+                  </div>
+                  <div className={ `email ${visible}` }>
+                    { myEmail }
                   </div>
                 </div>
               </div>
