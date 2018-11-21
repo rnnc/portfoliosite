@@ -22,12 +22,15 @@ export default class End extends Component {
                 </div>
                 <div className="link">
                   <div className="icon">
-                    <a
-                      href={ githubLink } target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <GithubIcon />
-                    </a>
+                    <div className="iconLink">
+                      <a
+                        href={ githubLink } target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <GithubIcon />
+                      </a>
+                    </div>
+
                   </div>
                 </div>
               </div>

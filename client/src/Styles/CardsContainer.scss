@@ -17,6 +17,7 @@ $bgHeight) {
   display: flex;
   flex-flow: column;
   height: 100vh;
+  z-index: -1;
   @media screen and (max-height: 900px) {
     height: auto;
   }
@@ -34,15 +35,16 @@ $bgHeight) {
     position: absolute;
     min-height: 100vh;
     width: 100vw;
+    z-index: 1;
     &.frontend {
       background-image: $bgImage_fe;
       @include backgroundMediaQuery(855px,
-      201vh);
+      302vh);
     }
     &.backend {
       background-image: $bgImage_be;
       @include backgroundMediaQuery(892px,
-      190vh);
+      216vh);
     }
     &.tools {
       background-image: $bgImage_tl;
@@ -50,7 +52,7 @@ $bgHeight) {
         filter: blur(7px) grayscale(50%);
       }
       @include backgroundMediaQuery(856px,
-      200vh);
+      278vh);
     }
     &.other {
       background-image: $bgImage_ot;
@@ -58,7 +60,7 @@ $bgHeight) {
         filter: blur(9px) grayscale(15%);
       }
       @include backgroundMediaQuery(892px,
-      140vh);
+      201vh);
     }
     background-attachment: fixed;
     background-size: cover;
