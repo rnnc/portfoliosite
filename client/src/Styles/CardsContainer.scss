@@ -1,7 +1,7 @@
-$bgImage_fe: url('../images/bg_code2.jpg');
-$bgImage_be: url('../images/bg_sparks.jpg');
-$bgImage_tl: url('../images/bg_buildings.jpg');
-$bgImage_ot: url('../images/bg_windmills.jpg');
+$bgImage_fe: url('https://s3.amazonaws.com/rnnc.images/bg_code2.jpg');
+$bgImage_be: url('https://s3.amazonaws.com/rnnc.images/bg_sparks.jpg');
+$bgImage_tl: url('https://s3.amazonaws.com/rnnc.images/bg_buildings.jpg');
+$bgImage_ot: url('https://s3.amazonaws.com/rnnc.images/bg_windmills.jpg');
 
 @mixin backgroundMediaQuery($bgWidth,
 $bgHeight) {
