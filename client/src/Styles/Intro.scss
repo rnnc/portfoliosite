@@ -87,9 +87,7 @@ $transDur: 0.25s) {
 }
 
 .consoleout {
-  /* border-radius: 0 0 10px 10px; */
   background: #141414;
-  /* border: 2.5px solid rgb(40, 61, 40); */
   box-shadow: 0px 0px 50px 5px rgba(21, 85, 53, 0.171);
   height: auto;
   width: 35em;
@@ -169,11 +167,6 @@ $transDur: 0.25s) {
       color: green;
     }
   }
-  /* >span:nth-child(2) {
-    text-align: right;
-    padding-top: 3.5em;
-    padding: 3.5em 0 1em 0;
-  } */
   @media screen and (max-width: 500px) {
     transform: scale(0.5);
   }

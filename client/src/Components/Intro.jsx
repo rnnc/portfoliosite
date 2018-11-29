@@ -20,11 +20,11 @@ export default class Intro extends Component {
         { ({ inView, ref }) => {
           const visible = inView ? "visible" : "";
           return (
-            <div className={ `introWrapper ${visible}` }>
+            <div className={ `introWrapper ${visible}` } >
 
               <div className={ `background ${visible}` } />
 
-              <div className="codewrapper" ref={ ref }>
+              <div className="codewrapper" ref={ ref } >
                 <div className="prompt" >
                   { " $ " }
                 </div>
@@ -35,9 +35,6 @@ export default class Intro extends Component {
 
               <div className={ `consoleout ${visible}` }>
                 <div className="topbar">
-                  {/* <div className="title">
-                    console
-                  </div> */}
                   <span className="exit">
                     <div className="cross">
                       { "╳" }
@@ -51,12 +48,12 @@ export default class Intro extends Component {
                   </span>
                 </div>
 
-                <span hidden={ !inView }>
+                <span>
                   <span className="bracket">{ "{ " }</span>
                   <span className="hw">hello World</span>
                   <span className="bracket">{ " }" }</span>
                 </span>
-                <span hidden={ !inView }>
+                <span>
                   <span className="intro_name">{ "my name is " }</span>
                   <span className="name">{ " Rohan" }</span>
                 </span>
