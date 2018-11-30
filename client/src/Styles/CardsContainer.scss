@@ -68,7 +68,7 @@ $bgHeight) {
     z-index: 0;
     filter: blur(1.5px) grayscale(20%);
     &.enter {
-      transition: filter 1s;
+      transition: filter 0.65s 0.25s;
       filter: blur(10px) grayscale(70%);
     }
   }

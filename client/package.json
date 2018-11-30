@@ -4,13 +4,10 @@
   "private": true,
   "dependencies": {
     "animejs": "^2.2.0",
-    "classnames": "^2.2.6",
-    "gsap": "^2.0.2",
     "node-sass": "^4.9.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-intersection-observer": "^6.2.3",
-    "react-parallax": "^2.0.1",
     "react-scripts": "2.0.5",
     "styled-components": "^4.0.2"
   },
