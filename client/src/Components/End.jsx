@@ -14,7 +14,7 @@ export default class End extends Component {
           return (
             <div className="endContainer">
 
-              <div className="background"  hidden={ !visible } />
+              <div className="background"/>
 
               <div className="ghClickout">
                 <div className="text">
