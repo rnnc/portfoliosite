@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 
+import { Cards, Inner, Info } from '../../stylesjs/Cards.style';
+
 export default class Card extends Component {
 
   handleClick = () => this.props.onClick(this.props.index);
 
   render() {
-
+    
     const selected = this.props.isActive ? 'selected' : '';
-
+    
     return (
       <div className={ `card ${selected}` } >
 
@@ -20,7 +22,7 @@ export default class Card extends Component {
             target="_blank" rel="noopener noreferrer"
             href={ this.props.children[1] }
             className={ `link ${selected}` }
-            
+
           >
             { this.props.children[2] }
           </a>

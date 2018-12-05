@@ -56,16 +56,12 @@
       top: 20%;
       font-weight: 400;
       font-size: 1.5em;
-      transition: opacity 0.5s;
-      @include opacityToggle(0.5s);
+      @include opacityToggle();
       a.link {
         color: rgb(255, 235, 59);
         padding: 5px 2px;
         font-size: 1.2em;
-        pointer-events: none;
         &.selected {
-          background: transparent;
-          pointer-events: auto;
           transition: background-color 0.5s;
           &:hover {
             background: rgba(0, 0, 0, 0.404);

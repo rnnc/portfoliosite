@@ -47,7 +47,7 @@ export default class BackEnd extends Component {
           return (
             <div className="masterContainer" ref={ ref }>
 
-              <div className={ `background backend ${entered}` } hidden={ !entered }/>
+              <div className={ `background backend ${entered}` }/>
 
               <div className={ `descriptor ${entered}` }>
 
