@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Cards, Inner, Info } from '../../stylesjs/Cards.style';
+/* import { Cards, Inner, Info } from '../../stylesjs/Cards.style'; */
 
 export default class Card extends Component {
 
