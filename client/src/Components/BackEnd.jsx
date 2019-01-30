@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Observer from 'react-intersection-observer';
 
 import {
-  NodeJSLogo, ExpressLogo, GraphQlLogo, MongoDBLogo
+  NodeJSLogo, ExpressLogo, GraphQlLogo, MongoDBLogo, AWSLogo
 } from './Logos/BackEndLogos';
 
 import CardContainer from './Cards/Container';
@@ -34,6 +34,12 @@ export default class BackEnd extends Component {
         "https://www.mongodb.com/",
         "MongoDB",
         "NOSql Database for modern apps"
+      ],
+      [
+        AWSLogo,
+        "https://aws.amazon.com",
+        "Amazon Web Services",
+        "Modern web hosting solutions"
       ]
     ]
     const blurbDescription =
