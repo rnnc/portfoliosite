@@ -18,7 +18,7 @@ export default class End extends Component {
 
               <div className="ghClickout">
                 <div className="text">
-                  { "Want to see how this site is coded?" }
+                  { "Want to see some of my code?" }
                 </div>
                 <div className="link">
                   <div className="icon">
