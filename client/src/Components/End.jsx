@@ -12,7 +12,7 @@ export default class End extends Component {
         { ({ inView, ref }) => {
           const visible = inView ? 'visible' : '';
           return (
-            <div className="endContainer">
+            <div id="end-cont" className="endContainer">
 
               <div className="background"/>
 

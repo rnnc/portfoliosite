@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+/* import TopBar from './Components/TopBar'; */
 import Intro from './Components/Intro';
 import FrontEnd from './Components/FrontEnd';
 import BackEnd from './Components/BackEnd';
@@ -31,6 +32,16 @@ export default class App extends Component {
         <Other />
 
         <End />
+
+        {/* <div className="toTop"
+          style={ {
+            position: "fixed", zIndex: "2", bottom: "2em", left: "1em",
+            fontSize: "1.3em", fontWeight: "600", color: "red",
+            opacity: 0
+          } }
+        >
+          {"TOP"}
+        </div> */}
 
       </div>
     )
