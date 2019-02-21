@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { GithubIcon } from './Logos/ToolsLogos'
+import '../Styles/TopBar.scss';
 
 export default class TopBar extends Component {
 
@@ -33,19 +34,3 @@ export default class TopBar extends Component {
   }
 }
 
-/*
-
-      <div className="nav">
-        <ul className="top-bar">
-          <li>
-            <span className="gh-scroll" onClick={ this.scrollTo }>
-              <GithubIcon />
-            </span>
-          </li>
-          <li><span>Contact</span></li>
-          <li><span>About</span></li>
-        </ul>
-      </div>
-
-
-*/

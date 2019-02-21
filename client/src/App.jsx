@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-/* import TopBar from './Components/TopBar'; */
+import TopBar from './Components/TopBar';
 import Intro from './Components/Intro';
 import FrontEnd from './Components/FrontEnd';
 import BackEnd from './Components/BackEnd';
@@ -20,6 +20,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
+
+        <TopBar/>
 
         <Intro />
 

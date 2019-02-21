@@ -8,7 +8,7 @@ $wbgImage: url("https://s3.amazonaws.com/rnnc.images/bg_code3.jpg");
   flex-direction: column;
   color: white;
   align-content: center;
-  justify-content: end;
+  justify-content: flex-end;
   .background {
     position: absolute;
     min-height: 100vh;
