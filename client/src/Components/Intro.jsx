@@ -14,6 +14,24 @@ export default class Intro extends Component {
     return this.commands[rand];
   }
 
+  consoleWindowTop() {
+    return (
+      <div className="topbar">
+        <span className="exit">
+          <div className="cross">
+            { "╳" }
+          </div>
+        </span>
+        <span className="expand">
+          { "☐" }
+        </span>
+        <span className="minimize">
+          { "—" }
+        </span>
+      </div>
+    )
+  }
+
   render() {
     return (
 
@@ -38,23 +56,9 @@ export default class Intro extends Component {
 
                 <div className="console-wrapper">
 
-
-
                   <div className={ `consoleout ${visible}` }>
 
-                    <div className="topbar">
-                      <span className="exit">
-                        <div className="cross">
-                          { "╳" }
-                        </div>
-                      </span>
-                      <span className="expand">
-                        { "☐" }
-                      </span>
-                      <span className="minimize">
-                        { "—" }
-                      </span>
-                    </div>
+                    { this.consoleWindowTop() }
 
                     <span>
                       <span className="bracket">{ "{ " }</span>
@@ -72,26 +76,14 @@ export default class Intro extends Component {
 
                   <div className={ `consoleout second ${visible}` }>
 
-                    <div className="topbar">
-                      <span className="exit">
-                        <div className="cross">
-                          { "╳" }
-                        </div>
-                      </span>
-                      <span className="expand">
-                        { "☐" }
-                      </span>
-                      <span className="minimize">
-                        { "—" }
-                      </span>
-                    </div>
+                    { this.consoleWindowTop() }
 
                     <span>
                       I like to make front
-                  </span>
+                    </span>
                     <span>
                       & back end apps
-                  </span>
+                    </span>
 
                   </div>
 

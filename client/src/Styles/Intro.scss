@@ -50,9 +50,7 @@ $transDur: 0.25s) {
 }
 
 .introWrapper {
-  /* align-self: center; */
   transform: scale(0.88);
-  /* display: inline-block; */
   display: table;
   @include window_size();
   background: rgb(14, 14, 14);
@@ -66,9 +64,6 @@ $transDur: 0.25s) {
     width: 100%;
     background-image: $bgImage;
     background-attachment: fixed;
-    /* background-size: cover; 
-     background-repeat: round; 
-     background-position: center center; */
     filter: blur(7px) grayscale(50%);
   }
 }
@@ -102,18 +97,13 @@ $transDur: 0.25s) {
 }
 
 .consoleout {
-  /* margin-top: 5%; */
   transform: scale(0.88);
   background: #141414;
   box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.171);
   &.second {
     margin-top: 2.5%;
   }
-  /* height: auto; */
-  /* position: absolute; */
   width: 35em;
-  /* top: 25vh; */
-  /* left: 200%; */
   display: flex;
   flex-direction: column;
   align-self: flex-end;
@@ -130,10 +120,6 @@ $transDur: 0.25s) {
     opacity: 1;
     transform: scale(0.9);
   }
-  /* &.visible {
-    left: 65%;
-    transition: left 1s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s, box-shadow 0.5s;
-  } */
   .topbar {
     position: absolute;
     height: 30px;
@@ -206,9 +192,6 @@ $transDur: 0.25s) {
     margin: 0 auto;
     transition: width 0.5s;
   }
-  .consoleout {
-    &.visible {}
-  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -219,88 +202,13 @@ $transDur: 0.25s) {
 }
 
 @media screen and (max-width: 585px) {
-  .consoleout {
-    >span {
-      font-size: 1.5em;
-    }
+  .console-wrapper {
+    margin-top: 20%;
   }
-}
-
-@media screen and (max-width: 585px) {
   .consoleout {
     width: 25em;
-    /*  */
-    /* height: 20em; */
     >span {
-      font-size: 1.75em;
+      font-size: 1.8em;
     }
   }
 }
-
-/* 
-@media screen and (max-width: 1655px) {
-  .consoleout {
-    &.visible {
-      left: 55%;
-    }
-  }
-}
-
-@media screen and (max-width:1300px) {
-  .consoleout {
-    &.visible {
-      left: 42%;
-    }
-  }
-}
-
-@media screen and (max-width:1000px) {
-  .consoleout {
-    &.visible {
-      left: 28%;
-      transform: scale(0.9);
-    }
-  }
-}
-
-@media screen and (max-width:770px) {
-  .consoleout {
-    &.visible {
-      left: 20%;
-      transform: scale(0.75);
-    }
-  }
-}
-
-@media screen and (max-width:650px) {
-  .consoleout {
-    &.visible {
-      left: 10%;
-    }
-  }
-}
-
-@media screen and (max-width:575px) {
-  .consoleout {
-    &.visible {
-      left: 0;
-      transform: scale(0.6);
-    }
-  }
-}
-
-@media screen and (max-width: 475px) {
-  .consoleout {
-    &.visible {
-      left: -20%;
-    }
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .consoleout {
-    &.visible {
-      left: -25%;
-    }
-  }
-} */
