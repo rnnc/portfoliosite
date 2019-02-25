@@ -15,6 +15,8 @@ import './Styles/CardsContainer.scss';
 import './Styles/Cards.scss';
 import './Styles/End.scss';
 
+import './Styles/StackContainer.scss';
+
 export default class App extends Component {
 
   render() {

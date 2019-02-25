@@ -58,18 +58,41 @@ export default class FrontEndCard extends Component {
       and sleek front ends for web pages`;
 
     return (
+
+      <div className="stack-container">
+
+        <Observer threshold={ 0.3 }>
+          { ({ inView, ref }) => {
+
+            const entered = inView ? "enter" : "";
+            return (
+
+              <div className="title-container frontend" ref={ref}>
+                  <div className="title">
+                    <div className={ `anim-container ${entered}` }>
+                      <div className="anim-text">
+                        { "Front End Tech" }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            )
+          } }
+        </Observer>
+
+      </div>
+    )
+  }
+}
+
+/*
       <Observer threshold={ 0.3 }>
         { ({ inView, ref }) => {
           const entered = inView ? "enter" : "";
           return (
             <div className="masterContainer" ref={ ref }>
 
-              <div className={ `background frontend ${entered}` }>
-                {/* <Suspense fallback={ <div>Loading...</div> }>
-                  <BGImage></BGImage>
-                </Suspense> */}
-                stuff
-              </div>
+              <div className={ `background frontend ${entered}` }/>
 
               <div className={ `descriptor ${entered}` }>
 
@@ -104,6 +127,4 @@ export default class FrontEndCard extends Component {
           );
         } }
       </Observer>
-    )
-  }
-}
+*/

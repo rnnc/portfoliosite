@@ -29,19 +29,20 @@ nav.main-nav {
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: rgb(0, 0, 0);
+    color: rgb(50, 50, 50);
     transition: color 0.3s,
-      background 0.3s,
-      padding 0.3s,
-      font-size 0.3s;
+    background 0.3s,
+    padding 0.3s,
+    font-size 0.3s;
     &:hover,
     &:focus {
       transition: all 0.3s;
       background: rgb(37, 37, 37);
-      color: rgb(255, 255, 255);
+      color: rgb(218, 218, 218);
       padding: 0.4rem 1rem;
       font-size: 1.75em;
       svg {
+      
         path {
           fill: rgb(218, 218, 218) !important;
         }
@@ -54,22 +55,8 @@ nav.main-nav {
       width: 55px;
       align-self: auto;
       path {
-        fill: black !important;
+        fill: rgb(50, 50, 50) !important;
       }
     }
   }
-  /* span {
-    display: block;
-    font-size: 1rem;
-    font-weight: normal;
-    color: #888;
-    margin: 0.25rem 0 0 0;
-  } */
-  /* .icon {
-    width: 40px;
-    height: 40px;
-    // float: left;
-    // margin-right: 1rem;
-    fill: #999;
-  } */
 }

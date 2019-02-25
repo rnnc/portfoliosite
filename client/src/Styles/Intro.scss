@@ -51,7 +51,6 @@ $transDur: 0.25s) {
 
 .introWrapper {
   transform: scale(0.88);
-  display: table;
   @include window_size();
   background: rgb(14, 14, 14);
   z-index: 1;
@@ -204,9 +203,19 @@ $transDur: 0.25s) {
 @media screen and (max-width: 585px) {
   .console-wrapper {
     margin-top: 20%;
+    float: inline-start;
   }
   .consoleout {
     width: 25em;
+    align-self: flex-start;
+    margin-top: -25%;
+    margin-left: -15%;
+    &.second{
+      margin-top: -10%;
+    }
+    &.visible{
+      transform: scale(0.6);
+    }
     >span {
       font-size: 1.8em;
     }

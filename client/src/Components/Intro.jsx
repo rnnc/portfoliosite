@@ -82,7 +82,7 @@ export default class Intro extends Component {
                       I like to make front
                     </span>
                     <span>
-                      & back end apps
+                      & back end web apps
                     </span>
 
                   </div>
