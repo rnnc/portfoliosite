@@ -8,8 +8,8 @@ export default class NewCard extends Component {
     // it's a text based logo to have to customize CSS sizing & positioning
     // So a check is performed for the logo file name
     // a classname is applied, and then handled in CSS
-    const logo_name = this.props.children[0].type.name;
-    const is_ejs = logo_name === "ExpressLogo";
+    const logo_name = this.props.children[1];
+    const is_ejs = logo_name === "ExpressJS";
 
     return (
       <div className="card">
