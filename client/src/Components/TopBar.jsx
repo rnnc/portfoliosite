@@ -5,25 +5,33 @@ import '../Styles/TopBar.scss';
 
 export default class TopBar extends Component {
 
-  scrollTo(e) {
+  scrollToContact(e) {
     e.preventDefault();
-    const elem = document.getElementById("end-cont")
+    const elem = document.getElementById("end-cont");
+    elem.scrollIntoView();
+  }
+
+  scrollToStack(e) {
+    e.preventDefault();
+    const elem = document.getElementById("stack-cont");
     elem.scrollIntoView();
   }
 
   render() {
     return (
 
-      <nav rol="navigation" class="main-nav">
+      <nav rol="navigation" className="main-nav">
         <ul>
           <li>
-            <a href="#">About</a>
+            <a onClick={ this.scrollToStack }>Stack</a>
           </li>
           <li>
-            <a href="#" onClick={ this.scrollTo }>Contact</a>
+            <a onClick={ this.scrollToContact }>Contact</a>
           </li>
           <li>
-            <a className="gh-icon" href="#" >
+            <a className="gh-icon"
+              href="https://github.com/rnnc" target="_blank"
+              rel="noopener noreferrer">
               <GithubIcon className="icon" />
             </a>
           </li>

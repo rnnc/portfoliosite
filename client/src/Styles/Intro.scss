@@ -6,7 +6,7 @@ $bgImage: url('https://s3.amazonaws.com/rnnc.images/bg_code.jpg');
 }
 
 @mixin window_size {
-  height: 80vh;
+  height: 85vh;
   width: 100vw;
 }
 
@@ -46,7 +46,7 @@ $transDur: 0.25s) {
 
 .main-intro {
   height: 100vh;
-  background: rgb(214, 214, 214);
+  background: rgb(155, 155, 155);
 }
 
 .introWrapper {
@@ -55,7 +55,7 @@ $transDur: 0.25s) {
   background: rgb(14, 14, 14);
   z-index: 1;
   border-radius: 1%;
-  border: 8px solid grey;
+  border: 8px solid rgb(74, 77, 82);
   transition: width 0.2s;
   .background {
     position: absolute;

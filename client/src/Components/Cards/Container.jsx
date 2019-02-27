@@ -1,43 +1,30 @@
 import React, { Component } from 'react'
 
-import Card from './Card';
+import NewCard from './NewCard';
 
 export default class CardContainer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { selected: null };
     this.LogoArray = [...this.props.children];
   }
-
-  handleClick = (index) => {
-    const selectState = (index !== this.state.selected) ? index : null;
-    this.setState({ selected: selectState });
-  }
-
   render() {
     return (
-      <div>
-        <div className={ `cardContainer ${this.props.cardsType}` }>
+      
+        <div className={ `cardContainer` }>
           {
             this.LogoArray.map((LogoData, i) => {
-              const [Logo, title, link, description] = LogoData;
+              const [Logo, title] = LogoData;
               return (
-                <Card
-                  key={ i } index={ i }
-                  isActive={ this.state.selected === i }
-                  onClick={ this.handleClick }
-                >
+                <NewCard key={ i } index={ i } >
                   { <Logo /> }
                   { title }
-                  { link }
-                  { description }
-                </Card>
+                </NewCard>
               )
             })
           }
         </div>
-      </div>
+      
     )
   }
 }

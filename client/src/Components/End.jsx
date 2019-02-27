@@ -5,7 +5,7 @@ import { GithubIcon } from './Logos/ToolsLogos';
 
 export default class End extends Component {
   render() {
-    const githubLink = "https://github.com/rnnc/portfoliosite";
+    const githubLink = "https://github.com/rnnc";
     const myEmail = "rohan_choudhary@live.com";
     return (
       <Observer thershold={ 0.9 }>
@@ -13,8 +13,6 @@ export default class End extends Component {
           const visible = inView ? 'visible' : '';
           return (
             <div id="end-cont" className="endContainer">
-
-              <div className="background"/>
 
               <div className="ghClickout">
                 <div className="text">

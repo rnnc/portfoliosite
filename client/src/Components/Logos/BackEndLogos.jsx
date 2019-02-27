@@ -49,7 +49,7 @@ export class ExpressLogo extends PureComponent{
         { ({ inView, ref }) => {
           return (
             <span className={`logo expressjs ${inView?'visible':''}`} style={ this.textStyle } ref={ ref }>
-              {"Express"}
+              {"express"}
             </span>
           )
         } }
